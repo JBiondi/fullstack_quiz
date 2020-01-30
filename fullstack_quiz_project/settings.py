@@ -12,10 +12,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-from secrets import key
-from secrets import db_password
+from django_settings_secrets import obfuscated_secret_key
+from django_settings_secrets import obfuscated_db_password
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = key
+SECRET_KEY = obfuscated_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'quiz_database',
         'USER': 'quiz_db_user2',
-        'PASSWORD': db_password,
+        'PASSWORD': obfuscated_db_password,
         'HOST': 'localhost',
         'PORT': '5432'
     }

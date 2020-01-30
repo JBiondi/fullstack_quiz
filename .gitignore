@@ -59,4 +59,4 @@ venv/
 .mypy_cache/
 
 # secrets
-secrets.py
+django_settings_secrets.py
