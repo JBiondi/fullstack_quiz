@@ -7,10 +7,10 @@ class Quiz(models.Model):
     quiz_topic = models.CharField(max_length=50)
 
 
-class Question(models.Model):
-    question_id = models.AutoField(primary_key=True)
+class Quote(models.Model):
+    quote_id = models.AutoField(primary_key=True)
     quiz_id = models.ForeignKey(Quiz, null=True, on_delete=models.SET_NULL)
-    question_text = models.TextField()
+    quote_text = models.TextField()
     incorrect_answer1 = models.CharField(max_length=50)
     incorrect_answer2 = models.CharField(max_length=50)
     incorrect_answer3 = models.CharField(max_length=50)
