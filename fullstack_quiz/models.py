@@ -20,7 +20,6 @@ class Quote(models.Model):
 class QuizUser(models.Model):
     user_id = models.AutoField(primary_key=True)
     display_name = models.CharField(max_length=25)
-    avatar = models.URLField()
 
 
 class Score(models.Model):
