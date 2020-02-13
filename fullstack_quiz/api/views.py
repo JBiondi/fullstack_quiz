@@ -19,3 +19,9 @@ def api_detail_quiz_view(request, slug):
     if request.method == 'GET':
         serializer = QuizSerializer(quiz)
         return Response(serializer.data)
+
+
+@api_view(['POST'])
+def api_create_quiz_view(request):
+    if request == 'POST':
+        print('banana')

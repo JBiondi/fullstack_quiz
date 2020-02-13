@@ -6,7 +6,6 @@ class Quiz(models.Model):
     quiz_id = models.AutoField(primary_key=True)
     quiz_topic = models.CharField(max_length=50)
     slug = models.SlugField(blank=True, unique=True)
-    # quiz_image = models.ImageField(implement_me)
 
 
 class Quote(models.Model):

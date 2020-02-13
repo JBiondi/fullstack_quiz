@@ -7,4 +7,5 @@ urlpatterns = [
 
     # Rest framework urls
     path('api/fullstack_quiz/', include('fullstack_quiz.api.urls', 'fullstack_quiz_api')),
+    path('create/', include('fullstack_quiz.api.urls', 'fullstack_quiz'))
 ]
