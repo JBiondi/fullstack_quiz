@@ -8,5 +8,5 @@ app_name = 'fullstack_quiz'
 
 urlpatterns = [
     path('<slug>/', api_detail_quiz_view, name='detail'),
-    path('create/', api_create_quiz_view, name='fruity')
+    path('', api_create_quiz_view, name='fruity')
 ]
