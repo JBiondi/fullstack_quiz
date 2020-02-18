@@ -5,7 +5,9 @@ from django.utils import timezone
 class Quiz(models.Model):
     quiz_id = models.AutoField(primary_key=True)
     quiz_topic = models.CharField(max_length=50)
-    slug = models.SlugField(blank=True, unique=True)
+
+    def __str__(self):
+        return self.quiz_topic
 
 
 class Quote(models.Model):

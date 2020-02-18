@@ -4,8 +4,8 @@ from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('fullstack_quiz.urls')),
 
     # Rest framework urls
-    path('api/fullstack_quiz/', include('fullstack_quiz.api.urls', 'fullstack_quiz_api')),
-    path('create/', include('fullstack_quiz.api.urls', 'fullstack_quiz'))
+
 ]
