@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'fullstack_quiz.apps.FullstackQuizConfig',
+    'api.apps.ApiConfig',
+
     'rest_framework',
 ]
 
