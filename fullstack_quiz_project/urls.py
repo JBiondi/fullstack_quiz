@@ -6,7 +6,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('fullstack_quiz.urls')),
     path('api/', include('api.urls')),
-
-
-
 ]

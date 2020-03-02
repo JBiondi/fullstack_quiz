@@ -4,5 +4,5 @@ from .views import QuizAPIView
 
 
 urlpatterns = [
-    path('', QuizAPIView.as_view()),
+    path('list_of_quizzes_as_api_endpoint/', QuizAPIView.as_view()),
 ]

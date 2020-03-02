@@ -1,8 +1,10 @@
-<h1>All Quizzes</h1>
+<title>A Normal Web Page</title>
+
+<h1>Choose a Quiz</h1>
 
 {% for quiz in object_list %}
     <ul>
-        <li>Topic: {{ quiz.quiz_topic }}</li>
+        <li>Quiz Topic: {{ quiz.quiz_topic }}</li>
     </ul>
 
 {% endfor %}
