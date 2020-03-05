@@ -1,10 +1,11 @@
 from django.urls import path
 
 from .views import QuizListView
-from .views import home_view
+# from .views import home_view
 
 
 urlpatterns = [
-    path('', home_view),
+    # not using this home view anymore because we're using the frontend app's home view
+    # path('', home_view),
     path('list_of_quizzes_as_web_page', QuizListView.as_view()),
 ]

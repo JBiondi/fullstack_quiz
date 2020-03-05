@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'fullstack_quiz.apps.FullstackQuizConfig',
     'api.apps.ApiConfig',
+    'frontend',
 
     'rest_framework',
 ]

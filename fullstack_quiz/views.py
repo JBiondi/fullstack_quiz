@@ -1,3 +1,4 @@
+from django.http import HttpRequest
 from django.shortcuts import render
 from django.views.generic import ListView
 from rest_framework.response import Response
@@ -12,9 +13,9 @@ class QuizListView(ListView):
         print('banana')
         return Quiz.objects.all()
 
-
-def home_view(request):
-    print('mango')
-    return render(request, 'fullstack_quiz/home.html')
+# Not using this anymore because we're using the frontend app's home view now
+# def home_view(request: HttpRequest):
+#     print('mango')
+#     return render(request, 'fullstack_quiz/home.html')
 
 
