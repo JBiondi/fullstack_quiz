@@ -60,3 +60,6 @@ venv/
 
 # secrets
 django_settings_secrets.py
+
+# node
+node_modules
