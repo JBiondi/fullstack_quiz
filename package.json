@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "webpack --mode development frontend/src/index.js --output frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./fullstack_quiz_project/frontend/src/index.js --output ./fullstack_quiz_project/frontend/static/frontend/main.js"
+    "build": "webpack --mode production frontend/src/index.js --output frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
