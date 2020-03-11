@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Frontend home page</title>
+    <link rel="shortcut icon" type="image/png" href="{% static '/img/favi.ico' %}"/>
+  </head>
+</html>
     <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body>
 <h1 class="choose-h1">Choose your quiz</h1>
 
-<button type="button" class="regular-button">Press Here</button>
 
-{% load static %}
-<a href="http://127.0.0.1:8000/video_game_quotes_quiz_page">
+
+    <a href="http://127.0.0.1:8000/video_game_quotes_quiz_page">
     <img src="static/img/video_game_quotes.PNG" class='choose_quiz_img1' alt="">
-</a>
+    </a>
 
-<a href="http://127.0.0.1:8000/programming_quiz_page">
+    <a href="http://127.0.0.1:8000/programming_quiz_page">
     <img src="static/img/programming.PNG" class='choose_quiz_img2' alt="">\
-</a>
+    </a>
+
+
+
+<br>
+<br>
+<div class="test-button-div">
+    <button type="button" class="regular-button">Press Here</button>
+</div>
+
 
 <script src="{% static "frontend/main.js" %}"></script>
 </body>

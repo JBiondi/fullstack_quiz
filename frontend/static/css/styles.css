@@ -18,19 +18,24 @@ body {
 
 .regular-button {
     color: cornflowerblue;
-    margin: auto;
+}
+
+.test-button-div {
+    text-align: center;
 }
 
 .choose_quiz_img1 {
-    margin-left: auto;
+    display: inline;
     margin-right: auto;
+    margin-left: auto;
     height: 250px;
     width: 250px;
 }
 
 .choose_quiz_img2 {
-    margin-left: auto;
+    display: inline;
     margin-right: auto;
+    margin-left: auto;
     height: 250px;
     width: 250px;
 }
