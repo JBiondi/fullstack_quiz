@@ -1,5 +1,36 @@
+body {
+    /* I should move this into the img folder once I figure out how to resolve the path */
+    background-image: url(dungeon.png);
+}
 
+.choose-h1 {
+    text-align: center;
+    color: azure;
+}
+
+.vg-h1 {
+    color: blue;
+}
+
+.pg-h1 {
+    color: red;
+}
 
 .regular-button {
     color: cornflowerblue;
+    margin: auto;
+}
+
+.choose_quiz_img1 {
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
+}
+
+.choose_quiz_img2 {
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
 }
