@@ -25,17 +25,12 @@ body {
 }
 
 .choose_quiz_img1 {
-    display: inline;
-    margin-right: auto;
-    margin-left: auto;
     height: 250px;
     width: 250px;
 }
 
 .choose_quiz_img2 {
-    display: inline;
-    margin-right: auto;
-    margin-left: auto;
     height: 250px;
     width: 250px;
 }
+

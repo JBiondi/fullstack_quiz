@@ -18,6 +18,7 @@ class Quote(models.Model):
     incorrect_answer2 = models.CharField(max_length=50)
     incorrect_answer3 = models.CharField(max_length=50)
     correct_answer = models.CharField(max_length=50)
+    # associated_image = models.ImageField()
 
 
 class QuizUser(models.Model):
