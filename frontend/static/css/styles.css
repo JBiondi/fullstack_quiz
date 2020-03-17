@@ -8,20 +8,8 @@ body {
     color: azure;
 }
 
-.vg-h1 {
-    color: blue;
-}
-
-.pg-h1 {
+.chosen-quiz-header {
     color: red;
-}
-
-.regular-button {
-    color: cornflowerblue;
-}
-
-.test-button-div {
-    text-align: center;
 }
 
 .choose_quiz_img1 {

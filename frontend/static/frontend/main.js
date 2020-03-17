@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var regularButton = document.querySelector('.regular-button');\nregularButton.addEventListener('click', getQuizzes);\n\nfunction fruitSpam() {\n  console.log('fruit fruit fruit fruit');\n}\n\nfunction getQuizzes() {\n  fetch('http://localhost:8000/api/list_of_quizzes_as_api_endpoint/').then(function (response) {\n    return response.json();\n  }).then(function (quizzes) {\n    console.log(quizzes);\n  });\n}\n\n//# sourceURL=webpack:///./frontend/src/index.js?");
+eval("var chosenQuizHeader = document.querySelector('.chosen-quiz-header');\nvar selectionImage = document.querySelector('.selection-image');\nvar quizzesArray;\n\nif (selectionImage) {\n  selectionImage.addEventListener('click', fillHeader);\n}\n\nfunction fillHeader() {\n  fetch('http://localhost:8000/api/list_of_quizzes_as_api_endpoint/').then(function (response) {\n    return response.json();\n  }).then(function (quizzes) {\n    console.log(quizzes);\n    quizzesArray = quizzes;\n  });\n  chosenQuizHeader.innerHTML = \"You have chosen to take the \".concat(quizzesArray[0].quiz_topic, \" quiz\");\n}\n\n//# sourceURL=webpack:///./frontend/src/index.js?");
 
 /***/ })
 
