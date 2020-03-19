@@ -7,18 +7,12 @@ body {
     text-align: center;
     color: azure;
 }
-
-.chosen-quiz-header {
-    color: red;
-}
-
-.choose_quiz_img1 {
+.choose_quiz_img {
     height: 250px;
     width: 250px;
 }
 
-.choose_quiz_img2 {
-    height: 250px;
-    width: 250px;
+.screen-name-prompt {
+    color: cornflowerblue;
+    text-align: center;
 }
-

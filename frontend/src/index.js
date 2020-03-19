@@ -1,16 +1,33 @@
-const chosenQuizHeader = document.querySelector('.chosen-quiz-header');
-const selectionVideoGameQuotes = document.querySelector('.selection-video-game-quotes');
+const selectionVideoGameQuotes = document.querySelector('.selection-vg-quotes');
 const selectionProgramming = document.querySelector('.selection-programming');
 
 let quizzesArray;
 
 
+let selectedProgramming = false;
+let selectedVideoGameQuotes = false;
+
 if (selectionVideoGameQuotes) {
-    chosenQuizHeader.innerHTML = `You have chosen to take the Video Game Quotes quiz`;
+    selectionVideoGameQuotes.addEventListener('click', makeTrueVGQuotes);
+    selectionProgramming.addEventListener('click', makeTrueProgramming);
 }
 
-if (selectionProgramming){
-    chosenQuizHeader.innerHTML = `You have chosen to take the Programming Quiz`;
+
+function makeTrueVGQuotes() {
+    selectedVideoGameQuotes = true;
+    console.log(`VG: ${selectedVideoGameQuotes}`);
+    console.log(`PROG: ${selectedProgramming}`);
+    selectionVideoGameQuotes.removeEventListener('click', makeTrueVGQuotes);
+    selectionProgramming.removeEventListener('click', makeTrueProgramming);
+}
+
+
+function makeTrueProgramming() {
+    selectedProgramming = true;
+    console.log(`VG: ${selectedVideoGameQuotes}`);
+    console.log(`PROG: ${selectedProgramming}`);
+    selectionVideoGameQuotes.removeEventListener('click', makeTrueVGQuotes);
+    selectionProgramming.removeEventListener('click', makeTrueProgramming);
 }
 
 
@@ -27,10 +44,4 @@ function grabQuizzes() {
 
     });
 
-
 }
-
-
-
-
-
