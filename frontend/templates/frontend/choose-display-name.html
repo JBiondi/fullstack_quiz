@@ -3,13 +3,17 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <title>Quiz</title>
+    <title>Choose a display name</title>
     <link rel="shortcut icon" type="image/png" href="{% static '/img/favi.ico' %}"/>
     <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body>
+<h1 class="screen-name-prompt">Enter a display name for the glory of the high score board</h1>
 
-
+<form method="post">
+    {{ form }}
+    <button type="submit">Submit</button>
+</form>
 
 
 <script src="{% static "frontend/main.js" %}"></script>
