@@ -10,8 +10,8 @@
 <body>
 <h1 class="screen-name-prompt">Enter a display name for the glory of the high score board</h1>
 
-<form method="post">
-    {{ form }}
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
 
