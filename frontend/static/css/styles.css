@@ -1,7 +1,11 @@
 body {
     /* I should move this into the img folder once I figure out how to resolve the path */
-    background-image: url(dungeon.png);
+    /*background-image: url(dungeon.png);*/
+    /*background-size: auto;*/
 }
+
+
+/* Quiz selection page */
 
 .choose-h1 {
     text-align: center;
@@ -12,7 +16,108 @@ body {
     width: 250px;
 }
 
-.screen-name-prompt {
+
+
+/* Display name selection page */
+
+.display-name-prompt {
     color: cornflowerblue;
     text-align: center;
+}
+
+
+
+/* Quiz page */
+
+.quiz-title {
+    text-align: center;
+}
+
+.correct {
+    font-size: 25px;
+    font-family: 'Hammersmith One', sans-serif;
+    text-align: center;
+    background: #3ef35c;
+    display: none;
+    width: 92px;
+    height: 32px;
+    margin: auto;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.incorrect {
+    font-size: 25px;
+    font-family: 'Hammersmith One', sans-serif;
+    text-align: center;
+    background: #3ef35c;
+    display: none;
+    width: 92px;
+    height: 32px;
+    margin: auto;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.quote-answer-container {
+    background-color: greenyellow;
+    /*border: 2px solid black;*/
+    width: 500px;
+    height: 300px;
+    margin: 15px auto;
+    padding: 5px;
+    justify-content: center;
+}
+
+.next-button {
+    background-color: #5480d1;
+    font-size: 20px;
+    font-family: 'Hammersmith One', sans-serif;
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    color: rgb(247, 239, 224);
+    display: block;
+    margin: auto;
+    width: 95px;
+    height: 38px;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.next-button:hover {
+    background-color: #a4ddc2;
+}
+
+.next-button:active {
+    transform: scale(.95);
+    transition: transform .2s;
+    border:  none;
+    border-radius: 5px;
+}
+
+.choice {
+    width: 180px;
+    height: 50px;
+    background-color: rgb(243, 209, 145);
+    text-align: center;
+    line-height: 55px;
+    color: #122b10;
+    font-size: 20px;
+    font-family: 'Hammersmith One', sans-serif;
+    cursor: pointer;
+    transform: scale(1);
+    margin: 10px auto;
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+}
+
+.choice:hover {
+    background-color: peru;
+}
+
+.choice:active {
+    transform: scale(.95);
+    transition: transform .2s;
 }

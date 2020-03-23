@@ -17,7 +17,7 @@ def display_name_form_view(request):
         form = DisplayNameForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('quiz_view')
+            return redirect('quiz_view_namespace')
 
     else:
         form = DisplayNameForm
