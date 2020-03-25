@@ -1,8 +1,7 @@
 const selectionVideoGameQuotes = document.querySelector('.selection-vg-quotes');
 const selectionProgramming = document.querySelector('.selection-programming');
 
-let quizzesArray;
-
+// let quizzesArray;
 
 let selectedProgramming = false;
 let selectedVideoGameQuotes = false;
@@ -19,6 +18,9 @@ function makeTrueVGQuotes() {
     console.log(`PROG: ${selectedProgramming}`);
     selectionVideoGameQuotes.removeEventListener('click', makeTrueVGQuotes);
     selectionProgramming.removeEventListener('click', makeTrueProgramming);
+    
+    // Get all video game quotes from the database and put them in an array
+    // But maybe in another function?
 }
 
 
@@ -30,18 +32,18 @@ function makeTrueProgramming() {
     selectionProgramming.removeEventListener('click', makeTrueProgramming);
 }
 
-
-function grabQuizzes() {
-    fetch('http://localhost:8000/api/list_of_quizzes_as_api_endpoint/')
-
-    .then(response => {
-        return response.json();
-
-    })
-    .then(quizzes => {
-        console.log(quizzes);
-        quizzesArray = quizzes;
-
-    });
-
-}
+//
+// function grabQuizzes() {
+//     fetch('http://localhost:8000/api/list_of_quizzes_as_api_endpoint/')
+//
+//     .then(response => {
+//         return response.json();
+//
+//     })
+//     .then(quizzes => {
+//         console.log(quizzes);
+//         quizzesArray = quizzes;
+//
+//     });
+//
+// }
