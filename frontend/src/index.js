@@ -19,8 +19,8 @@ function makeTrueVGQuotes() {
     selectionVideoGameQuotes.removeEventListener('click', makeTrueVGQuotes);
     selectionProgramming.removeEventListener('click', makeTrueProgramming);
     
-    // Get all video game quotes from the database and put them in an array
-    // But maybe in another function?
+    // Tell backend
+
 }
 
 

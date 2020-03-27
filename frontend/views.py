@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 
 from fullstack_quiz.forms import DisplayNameForm
 from fullstack_quiz.models import QuizUser
+from fullstack_quiz.logic import prompts_list
 
 
 def frontend_home_view(request):
@@ -28,6 +29,8 @@ def display_name_form_view(request):
 
 
 def quiz_view(request):
-    print('strawberry')
+    for prompt in prompts_list:
+        print(prompt.prompt_text)
+
     return render(request, 'frontend/quiz.html')
 
