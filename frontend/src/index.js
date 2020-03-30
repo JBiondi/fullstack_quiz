@@ -14,12 +14,18 @@ if (selectionVideoGameQuotes) {
 
 function makeTrueVGQuotes() {
     selectedVideoGameQuotes = true;
-    console.log(`VG: ${selectedVideoGameQuotes}`);
-    console.log(`PROG: ${selectedProgramming}`);
+
+    // console.log(`VG: ${selectedVideoGameQuotes}`);
+    // console.log(`PROG: ${selectedProgramming}`);
+
     selectionVideoGameQuotes.removeEventListener('click', makeTrueVGQuotes);
     selectionProgramming.removeEventListener('click', makeTrueProgramming);
     
-    // Tell backend
+    // Tell the python logic on the backend that we've chosen this quiz
+
+    const relevantQuizID = 1
+
+    // send request
 
 }
 
@@ -30,7 +36,11 @@ function makeTrueProgramming() {
     console.log(`PROG: ${selectedProgramming}`);
     selectionVideoGameQuotes.removeEventListener('click', makeTrueVGQuotes);
     selectionProgramming.removeEventListener('click', makeTrueProgramming);
+
+    // Tell backend we've chosen this quiz
 }
+
+
 
 //
 // function grabQuizzes() {

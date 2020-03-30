@@ -7,6 +7,14 @@ from rest_framework import serializers
 from .models import Quiz
 
 
+def quiz_selection_view(request):
+    print('pear')
+    if request.method == 'POST':
+        print('blueberry')
+        relevant_quiz_id = request.great_variable_name
+        return relevant_quiz_id
+
+
 class QuizListView(ListView):
 
     def get_queryset(self):

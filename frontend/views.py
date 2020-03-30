@@ -18,6 +18,7 @@ def display_name_form_view(request):
         form = DisplayNameForm(request.POST)
         if form.is_valid():
             form.save()
+            # Make this redirect to high score board instead
             return redirect('quiz_view_namespace')
 
     else:
