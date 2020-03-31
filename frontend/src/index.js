@@ -2,42 +2,59 @@ const selectionVideoGameQuotes = document.querySelector('.selection-vg-quotes');
 const selectionProgramming = document.querySelector('.selection-programming');
 
 // let quizzesArray;
+let relevantQuizID;
 
-let selectedProgramming = false;
-let selectedVideoGameQuotes = false;
 
+// Add event listeners
 if (selectionVideoGameQuotes) {
-    selectionVideoGameQuotes.addEventListener('click', makeTrueVGQuotes);
-    selectionProgramming.addEventListener('click', makeTrueProgramming);
+    selectionVideoGameQuotes.addEventListener('click', selectedVGQuotes);
+    selectionProgramming.addEventListener('click', selectedProgramming);
 }
 
 
-function makeTrueVGQuotes() {
-    selectedVideoGameQuotes = true;
+function selectedVGQuotes() {
 
-    // console.log(`VG: ${selectedVideoGameQuotes}`);
-    // console.log(`PROG: ${selectedProgramming}`);
-
-    selectionVideoGameQuotes.removeEventListener('click', makeTrueVGQuotes);
-    selectionProgramming.removeEventListener('click', makeTrueProgramming);
+    // Remove event listeners
+    selectionVideoGameQuotes.removeEventListener('click', selectedVGQuotes);
+    selectionProgramming.removeEventListener('click', selectedProgramming);
     
-    // Tell the python logic on the backend that we've chosen this quiz
-
-    const relevantQuizID = 1
-
-    // send request
+    // Tell the backend that we've chosen this quiz
+    relevantQuizID = 1
+    sendQuizID()
 
 }
 
+function sendQuizID() {
+    const payload = {
+        'relevant_id': relevantQuizID
+    };
 
-function makeTrueProgramming() {
-    selectedProgramming = true;
-    console.log(`VG: ${selectedVideoGameQuotes}`);
-    console.log(`PROG: ${selectedProgramming}`);
-    selectionVideoGameQuotes.removeEventListener('click', makeTrueVGQuotes);
-    selectionProgramming.removeEventListener('click', makeTrueProgramming);
+    return fetch('someURL?', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+    })
+        // This part maybe checks for HTTP errors?
+        .then(response => response.json())
+}
 
-    // Tell backend we've chosen this quiz
+
+
+
+
+
+
+
+
+
+function selectedProgramming() {
+    // Remove event listeners
+    selectionVideoGameQuotes.removeEventListener('click', selectedVGQuotes);
+    selectionProgramming.removeEventListener('click', selectedProgramming);
+
+    relevantQuizID = 2
 }
 
 
