@@ -11,6 +11,23 @@ if (selectionVideoGameQuotes) {
     selectionProgramming.addEventListener('click', selectedProgramming);
 }
 
+function getCookie(name) {
+    if (!document.cookie) {
+      return null;
+    }
+    const token = document.cookie.split(';')
+      .map(c => c.trim())
+      .filter(c => c.startsWith(name + '='));
+
+    if (token.length === 0) {
+      return null;
+    }
+    return decodeURIComponent(token[0].split('=')[1]);
+  }
+
+const csrftoken = getCookie('csrftoken')
+console.log(csrftoken)
+
 
 function selectedVGQuotes() {
 
@@ -22,16 +39,17 @@ function selectedVGQuotes() {
     relevantQuizID = 1;
 
     const payload = {
-        'relevant_id': relevantQuizID
+        'selected_quiz_id': relevantQuizID
     };
 
     return fetch('http://localhost:8000/api/quiz_selection_api_endpoint/', {
-        method: 'POST',
         credentials: 'same-origin',
+        method: 'POST',
         headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken
         },
+
         body: JSON.stringify(payload),
     })
         // This part maybe checks for HTTP errors?

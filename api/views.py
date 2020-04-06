@@ -1,13 +1,17 @@
+from django.http import HttpResponse
 from rest_framework import generics
-from rest_framework.decorators import api_view
 
 from fullstack_quiz.models import Quiz
 from .serializers import QuizSerializer
 
+import json
 
-@api_view(['POST'])
+
 def quiz_selection_handler_view(request):
-    print(request.body)
+    body = json.loads(request.body.decode('utf-8'))
+    selected_quiz = body.get('selected_quiz_id')
+    print(selected_quiz)
+    return HttpResponse()
 
 
 # A read only endpoint for all quiz instances
