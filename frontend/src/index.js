@@ -25,8 +25,7 @@ function getCookie(name) {
     return decodeURIComponent(token[0].split('=')[1]);
   }
 
-const csrftoken = getCookie('csrftoken')
-console.log(csrftoken)
+const csrftoken = getCookie('csrftoken');
 
 
 function selectedVGQuotes() {
@@ -35,7 +34,7 @@ function selectedVGQuotes() {
     selectionVideoGameQuotes.removeEventListener('click', selectedVGQuotes);
     selectionProgramming.removeEventListener('click', selectedProgramming);
     
-    // Tell the backend that we've chosen this quiz
+    // Tell the backend we've chosen this quiz
     relevantQuizID = 1;
 
     const payload = {
@@ -43,7 +42,6 @@ function selectedVGQuotes() {
     };
 
     return fetch('http://localhost:8000/api/quiz_selection_api_endpoint/', {
-        credentials: 'same-origin',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -52,29 +50,18 @@ function selectedVGQuotes() {
 
         body: JSON.stringify(payload),
     })
-        // This part maybe checks for HTTP errors?
-        .then(response => response.json())
+        // What is the deal with this part
+        .then(function(response) {
+            // convert response from json to javascript
+            let myData = response.json();
+            return myData;
+        })
 
+        .then(function(myData) {
+            console.log(myData)
+    });
 
 }
-
-// function sendQuizID() {
-//     const payload = {
-//         'relevant_id': relevantQuizID
-//     };
-//
-//     return fetch('http://localhost:8000/api/quiz_selection_api_endpoint/', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(payload),
-//     })
-//         // This part maybe checks for HTTP errors?
-//         .then(response => response.json())
-// }
-
-
 
 
 function selectedProgramming() {

@@ -6,5 +6,7 @@ from .views import quiz_selection_handler_view
 
 urlpatterns = [
     path('list_of_quizzes_as_api_endpoint', QuizAPIView.as_view()),
+
+    # This URL is used in the fetch call
     path('quiz_selection_api_endpoint/', quiz_selection_handler_view)
 ]
