@@ -37,28 +37,19 @@ function selectedVGQuotes() {
     // Tell the backend we've chosen this quiz
     relevantQuizID = 1;
 
-    const payload = {
-        'selected_quiz_id': relevantQuizID
-    };
 
-    return fetch('http://localhost:8000/api/quiz_selection_api_endpoint/', {
-        method: 'POST',
+    fetch(`http://localhost:8000/api/quiz_selection_api_endpoint/${relevantQuizID}`, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrftoken
-        },
-
-        body: JSON.stringify(payload),
+        }
     })
-        // What is the deal with this part
-        .then(function(response) {
-            // convert response from json to javascript
-            let myData = response.json();
-            return myData;
+        .then(response => {
+            return response.json();
         })
-
-        .then(function(myData) {
-            console.log(myData)
+        .then((data) =>{
+            console.log(data);
     });
 
 }
