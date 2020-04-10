@@ -35,15 +35,15 @@ function selectedVGQuotes() {
     selectionProgramming.removeEventListener('click', selectedProgramming);
     
     // Tell the backend we've chosen this quiz
-    relevantQuizID = 1;
+    let relevantQuizID = 1;
 
 
-    fetch(`http://localhost:8000/api/quiz_selection_api_endpoint/${relevantQuizID}`, {
+    fetch(`http://localhost:8000/api/quiz_selection_api_endpoint/${relevantQuizID}/`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrftoken
-        }
+        },
     })
         .then(response => {
             return response.json();

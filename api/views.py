@@ -9,9 +9,11 @@ from fullstack_quiz.models import Prompt
 from .serializers import QuizSerializer
 
 
-def quiz_selection_handler_view(request: HttpRequest):
+def quiz_selection_handler_view(request: HttpRequest, relevant_quiz_id=None):
     print(request.content_type)
-    print(request.get_full_path())
+    print(f'Relevant quiz ID: {relevant_quiz_id}')
+    # my_query = request.GET.get(relevant_quiz_id, 'cant find arg1')
+    # print(my_query)
     # selected_quiz_id =
     # print(selected_quiz_id)
 
@@ -19,7 +21,7 @@ def quiz_selection_handler_view(request: HttpRequest):
     # prompts_array = list(prompts_queryset)
     # print(prompts_array)
 
-    return HttpResponse(10, content_type='application/json')
+    return HttpResponse('not sure what to put here', content_type='application/json')
 
 
 
