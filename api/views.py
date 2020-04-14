@@ -1,4 +1,5 @@
 import json
+from django.core.serializers import serialize
 
 from django.http import HttpResponse
 from django.http import HttpRequest
@@ -7,21 +8,24 @@ from rest_framework import generics
 from fullstack_quiz.models import Quiz
 from fullstack_quiz.models import Prompt
 from .serializers import QuizSerializer
+from .serializers import PromptSerializer
 
 
-def quiz_selection_handler_view(request: HttpRequest, relevant_quiz_id=None):
-    print(request.content_type)
-    print(f'Relevant quiz ID: {relevant_quiz_id}')
-    # my_query = request.GET.get(relevant_quiz_id, 'cant find arg1')
-    # print(my_query)
-    # selected_quiz_id =
-    # print(selected_quiz_id)
+def quiz_selection_handler_view(request: HttpRequest, selected_quiz_id=None):
 
-    # prompts_queryset = Prompt.objects.filter(quiz_id=selected_quiz_id).order_by('prompt_id')
-    # prompts_array = list(prompts_queryset)
-    # print(prompts_array)
+    print(f'Selected quiz ID: {selected_quiz_id}')
 
-    return HttpResponse('not sure what to put here', content_type='application/json')
+    prompts_queryset = Prompt.objects.filter(quiz_id=selected_quiz_id).order_by('prompt_id')
+
+    prompts_array = []
+    for prompt in prompts_queryset:
+        prompts_array.append(PromptSerializer(prompt).data)
+
+    json_prompts = json.dumps(prompts_array)
+
+    print(json_prompts)
+
+    return HttpResponse(json_prompts, content_type='application/json')
 
 
 

@@ -17,6 +17,9 @@ class Prompt(models.Model):
     correct_answer = models.CharField(max_length=50)
     # associated_image = models.ImageField()
 
+    def __str__(self):
+        return self.prompt_text
+
 
 class QuizUser(models.Model):
     user_id = models.AutoField(primary_key=True)

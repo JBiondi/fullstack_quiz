@@ -35,10 +35,10 @@ function selectedVGQuotes() {
     selectionProgramming.removeEventListener('click', selectedProgramming);
     
     // Tell the backend we've chosen this quiz
-    let relevantQuizID = 1;
+    let selectedQuizID = 1;
 
 
-    fetch(`http://localhost:8000/api/quiz_selection_api_endpoint/${relevantQuizID}/`, {
+    fetch(`http://localhost:8000/api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -48,8 +48,9 @@ function selectedVGQuotes() {
         .then(response => {
             return response.json();
         })
-        .then((data) =>{
-            console.log(data);
+        .then((data) => {
+            console.log(data)
+            data.forEach(prompt => console.log(prompt))
     });
 
 }
