@@ -5,60 +5,45 @@ body {
 }
 
 
-/* Quiz selection page */
-
 .choose-h1 {
     text-align: center;
-    color: azure;
+    color: darkblue;
 }
 .choose_quiz_img {
     height: 250px;
     width: 250px;
 }
 
-
-
-/* Display name selection page */
-
-.display-name-prompt {
-    color: cornflowerblue;
-    text-align: center;
-}
-
-
-
-/* Quiz page */
-
 .quiz-title {
     text-align: center;
 }
 
-.correct {
+.correct-notification {
     font-size: 25px;
     font-family: 'Hammersmith One', sans-serif;
     text-align: center;
     background: #3ef35c;
-    display: none;
     width: 92px;
     height: 32px;
     margin: auto;
     padding: 5px;
     border: 2px solid black;
     border-radius: 5px;
+    display: none;
 }
 
-.incorrect {
+.incorrect-notification {
     font-size: 25px;
     font-family: 'Hammersmith One', sans-serif;
     text-align: center;
     background: #3ef35c;
-    display: none;
     width: 92px;
     height: 32px;
     margin: auto;
     padding: 5px;
     border: 2px solid black;
     border-radius: 5px;
+    display: none;
 }
 
 .prompt-answer-container {
@@ -69,6 +54,7 @@ body {
     margin: 15px auto;
     padding: 5px;
     justify-content: center;
+    display: none;
 }
 
 .next-button {
@@ -78,12 +64,12 @@ body {
     /*border: 1px solid black;*/
     border-radius: 5px;
     color: rgb(247, 239, 224);
-    display: block;
     margin: auto;
     width: 90px;
     height: 38px;
     transform: scale(1);
     cursor: pointer;
+    display: none;
 }
 
 .next-button:hover {
@@ -95,6 +81,11 @@ body {
     transition: transform .2s;
     border:  none;
     border-radius: 5px;
+}
+
+
+.choices-container {
+    display: none;
 }
 
 .choice {
@@ -120,4 +111,12 @@ body {
 .choice:active {
     transform: scale(.95);
     transition: transform .2s;
+}
+
+
+/* Display name selection page */
+
+.display-name-prompt {
+    color: cornflowerblue;
+    text-align: center;
 }
