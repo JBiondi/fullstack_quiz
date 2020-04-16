@@ -1,5 +1,4 @@
 import json
-from django.core.serializers import serialize
 
 from django.http import HttpResponse
 from django.http import HttpRequest
@@ -13,8 +12,6 @@ from .serializers import PromptSerializer
 
 def quiz_selection_handler_view(request: HttpRequest, selected_quiz_id=None):
 
-    print(f'Selected quiz ID: {selected_quiz_id}')
-
     prompts_queryset = Prompt.objects.filter(quiz_id=selected_quiz_id).order_by('prompt_id')
 
     prompts_array = []
@@ -22,8 +19,6 @@ def quiz_selection_handler_view(request: HttpRequest, selected_quiz_id=None):
         prompts_array.append(PromptSerializer(prompt).data)
 
     json_prompts = json.dumps(prompts_array)
-
-    print(json_prompts)
 
     return HttpResponse(json_prompts, content_type='application/json')
 

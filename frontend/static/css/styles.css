@@ -61,7 +61,7 @@ body {
     border-radius: 5px;
 }
 
-.quote-answer-container {
+.prompt-answer-container {
     background-color: greenyellow;
     /*border: 2px solid black;*/
     width: 500px;
