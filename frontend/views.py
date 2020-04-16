@@ -28,10 +28,3 @@ def display_name_form_view(request):
         'form': form
     })
 
-
-def quiz_view(request):
-    # for prompt in prompts_list:
-    #     print(prompt.prompt_text)
-
-    return render(request, 'frontend/quiz.html')
-

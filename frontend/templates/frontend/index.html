@@ -5,26 +5,31 @@
     <meta charset="UTF-8">
     <title>Frontend home page</title>
     <link rel="shortcut icon" type="image/png" href="{% static '/img/favi.ico' %}"/>
-  </head>
-</html>
     <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body>
 <h1 class="choose-h1">Choose your quiz</h1>
 
-
-{#        <a href="http://127.0.0.1:8000/quiz">#}
         <img src="static/img/video_game_quotes.PNG" class='choose_quiz_img selection-vg-quotes' alt="">
-{#        </a>#}
+        <img src="static/img/programming.PNG" class='choose_quiz_img selection-programming' alt="">
 
+<h1 class="quiz-title">Quiz Title</h1>
 
-        <a href="http://127.0.0.1:8000/quiz">
-        <img src="static/img/programming.PNG" class='choose_quiz_img selection-programming' alt="">\
-        </a>
+<div class="correct">Correct</div>
+<div class="incorrect">Incorrect</div>
 
 <div class="prompt-answer-container">
 </div>
 
+
+<button type="button" class="next-button" onclick="">Next  ></button>
+
+<div class="choices-container">
+    <div class="choice choiceIndex0"></div>
+    <div class="choice choiceIndex1"></div>
+    <div class="choice choiceIndex2"></div>
+    <div class="choice choiceIndex3"></div>
+</div>
 
 <script src="{% static "frontend/main.js" %}"></script>
 </body>
