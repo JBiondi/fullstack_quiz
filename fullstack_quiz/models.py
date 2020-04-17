@@ -6,6 +6,9 @@ class Quiz(models.Model):
     quiz_id = models.AutoField(primary_key=True)
     quiz_topic = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.quiz_topic
+
 
 class Prompt(models.Model):
     prompt_id = models.AutoField(primary_key=True)
@@ -15,6 +18,7 @@ class Prompt(models.Model):
     incorrect_answer2 = models.CharField(max_length=50)
     incorrect_answer3 = models.CharField(max_length=50)
     correct_answer = models.CharField(max_length=50)
+    answer_text = models.TextField(default='answer text goes here')
     # associated_image = models.ImageField()
 
     def __str__(self):

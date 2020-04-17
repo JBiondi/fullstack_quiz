@@ -49,6 +49,10 @@ body {
 .prompt-answer-container {
     background-color: greenyellow;
     /*border: 2px solid black;*/
+    font-size: 66px;
+    font-style: italic;
+    color: cadetblue;
+    text-align: center;
     width: 500px;
     height: 300px;
     margin: 15px auto;
@@ -95,7 +99,7 @@ body {
     text-align: center;
     line-height: 55px;
     color: #122b10;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Hammersmith One', sans-serif;
     cursor: pointer;
     transform: scale(1);

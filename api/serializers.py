@@ -14,4 +14,4 @@ class PromptSerializer(serializers.ModelSerializer):
     class Meta:
         model = Prompt
         fields = ('prompt_text', 'incorrect_answer1', 'incorrect_answer2', 'incorrect_answer3',
-                  'correct_answer')
+                  'correct_answer', 'answer_text')

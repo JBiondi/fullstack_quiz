@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.views.decorators.csrf import ensure_csrf_cookie
+
 from fullstack_quiz.forms import DisplayNameForm
-from fullstack_quiz.models import QuizUser
-from fullstack_quiz.logic import prompts_list
 
 
 def frontend_home_view(request):
