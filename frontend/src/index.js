@@ -1,5 +1,6 @@
 let promptsArray = [];
 let currentPrompt = 0;
+let lengthOfQuiz = 0;
 let userCorrectScore = 0;
 
 // Selection screen elements
@@ -11,10 +12,10 @@ const selectionProgramming = document.querySelector('.selection-programming');
 const promptAnswerContainer = document.querySelector('.prompt-answer-container');
 const quizTitle = document.querySelector('.quiz-title');
 const choicesContainer = document.querySelector('.choices-container');
-const choice0 = document.querySelector('.choice0');
-const choice1 = document.querySelector('.choice1');
-const choice2 = document.querySelector('.choice2');
-const choice3 = document.querySelector('.choice3');
+const choice0 = document.querySelector('.choiceIndex0');
+const choice1 = document.querySelector('.choiceIndex1');
+const choice2 = document.querySelector('.choiceIndex2');
+const choice3 = document.querySelector('.choiceIndex3');
 
 // Answer elements
 const correctNotification = document.querySelector('.correct-notification');
@@ -23,12 +24,13 @@ const nextButton = document.querySelector('.next-button');
 
 
 // Add event listeners
-selectionVideoGameQuotes.addEventListener('click', selectedVGQuotes);
-// selectionProgramming.addEventListener('click', selectedProgramming);
+selectionVideoGameQuotes.addEventListener('click', userSelectedVGQuotes);
+
 choice0.addEventListener('click', revealAnswer);
 choice1.addEventListener('click', revealAnswer);
 choice2.addEventListener('click', revealAnswer);
 choice3.addEventListener('click', revealAnswer);
+nextButton.addEventListener('click', nextPrompt);
 
 
 function getCookie(name) {
@@ -70,13 +72,39 @@ function showNextButton() {
     nextButton.style.display = 'block';
 }
 
+
+function  hideNextButton() {
+    nextButton.style.display = 'none';
+}
+
+
+function showCorrectNotification() {
+    correctNotification.style.display = 'block';
+}
+
+
+function hideCorrectNotification() {
+    correctNotification.style.display = 'none';
+}
+
+
+function showIncorrectNotification() {
+    incorrectNotification.style.display = 'block';
+}
+
+
+function hideIncorrectNotification() {
+    incorrectNotification.style.display = 'none';
+}
+
+
 function resetStats() {
     userCorrectScore = 0;
     currentPrompt = 0;
 }
 
 
-function selectedVGQuotes() {
+function userSelectedVGQuotes() {
 
     hideSelectionElements();
     showPromptElements();
@@ -98,22 +126,48 @@ function selectedVGQuotes() {
         .then(function populateLayout (data) {
             data.forEach(prompt => console.log(prompt));
             promptAnswerContainer.innerHTML = `${data[0].prompt_text}`;
-            choice0.innerHTML = `${data[0].incorrect_answer1}`;
-            choice1.innerHTML = `${data[0].incorrect_answer2}`;
-            choice2.innerHTML = `${data[0].correct_answer}`;
-            choice3.innerHTML = `${data[0].incorrect_answer3}`;
+            choice0.innerHTML = `${data[0].answer0}`;
+            choice1.innerHTML = `${data[0].answer1}`;
+            choice2.innerHTML = `${data[0].answer2}`;
+            choice3.innerHTML = `${data[0].answer3}`;
             promptsArray = data;
+            lengthOfQuiz = promptsArray.length;
         })
 
     quizTitle.innerHTML = 'Video Game Quotes Quiz';
 }
 
 
-function revealAnswer() {
+function revealAnswer(event) {
     showNextButton();
     hideChoices();
-    promptAnswerContainer.innerHTML = `${promptsArray[0].answer_text}`;
+    promptAnswerContainer.innerHTML = `${promptsArray[currentPrompt].answer_text}`;
+
+    // let eventClassArray = event.target.classList;
+    if (event.target.classList.contains(promptsArray[currentPrompt].correct_choice)) {
+        showCorrectNotification()
+    }
+    else {
+        showIncorrectNotification()
+    }
 
 }
 
+
+function nextPrompt() {
+    currentPrompt += 1;
+    hideNextButton();
+    hideCorrectNotification();
+    hideIncorrectNotification();
+
+    if (currentPrompt < lengthOfQuiz) {
+        showPromptElements();
+    }
+
+    promptAnswerContainer.innerHTML = `${promptsArray[currentPrompt].prompt_text}`;
+    choice0.innerHTML = `${promptsArray[currentPrompt].answer0}`;
+    choice1.innerHTML = `${promptsArray[currentPrompt].answer1}`;
+    choice2.innerHTML = `${promptsArray[currentPrompt].answer2}`;
+    choice3.innerHTML = `${promptsArray[currentPrompt].answer3}`;
+}
 

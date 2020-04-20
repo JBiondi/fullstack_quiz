@@ -13,5 +13,5 @@ class QuizSerializer(serializers.ModelSerializer):
 class PromptSerializer(serializers.ModelSerializer):
     class Meta:
         model = Prompt
-        fields = ('prompt_text', 'incorrect_answer1', 'incorrect_answer2', 'incorrect_answer3',
-                  'correct_answer', 'answer_text')
+        fields = ('prompt_text', 'answer0', 'answer1', 'answer2', 'answer3',
+                  'correct_choice', 'answer_text')
