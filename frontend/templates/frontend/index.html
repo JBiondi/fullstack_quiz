@@ -34,6 +34,12 @@
 
 <button type="button" class="return-button" onclick="">Return to quiz selection</button>
 
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+<input type="submit">
+</form>
+
 
 <script src="{% static "frontend/main.js" %}"></script>
 </body>

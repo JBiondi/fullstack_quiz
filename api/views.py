@@ -1,12 +1,11 @@
 import json
 
-from django.http import HttpResponse
 from django.http import HttpRequest
-from rest_framework import generics
+from django.http import HttpResponse
+from django.shortcuts import render
 
-from fullstack_quiz.models import Quiz
+from fullstack_quiz.forms import DisplayNameForm
 from fullstack_quiz.models import Prompt
-from .serializers import QuizSerializer
 from .serializers import PromptSerializer
 
 
@@ -23,15 +22,15 @@ def quiz_selection_handler_view(request: HttpRequest, selected_quiz_id=None):
     return HttpResponse(json_prompts, content_type='application/json')
 
 
+def display_name_form_view(request):
+    if request.method == 'POST':
+        form = DisplayNameForm(request.POST)
 
+        if form.is_valid():
+            form.save()
 
+    form = DisplayNameForm()
 
-
-
-# A read only endpoint for all quiz instances
-class QuizAPIView(generics.ListAPIView):
-
-    queryset = Quiz.objects.all()
-
-    serializer_class = QuizSerializer
+    context = {'form': form}
+    return render(request, 'frontend/index.html', context)
 
