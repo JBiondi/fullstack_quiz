@@ -22,6 +22,10 @@ const correctNotification = document.querySelector('.correct-notification');
 const incorrectNotification = document.querySelector('.incorrect-notification');
 const nextButton = document.querySelector('.next-button');
 
+// Final elements
+const userScore = document.querySelector('.user-score');
+const returnButton = document.querySelector('.return-button');
+
 
 // Add event listeners
 selectionVideoGameQuotes.addEventListener('click', userSelectedVGQuotes);
@@ -31,6 +35,7 @@ choice1.addEventListener('click', revealAnswer);
 choice2.addEventListener('click', revealAnswer);
 choice3.addEventListener('click', revealAnswer);
 nextButton.addEventListener('click', nextPrompt);
+returnButton.addEventListener('click', returnToStart);
 
 
 function getCookie(name) {
@@ -50,6 +55,13 @@ function getCookie(name) {
 const csrftoken = getCookie('csrftoken');
 
 
+function showSelectionElements() {
+    selectionVideoGameQuotes.style.display = 'block';
+    selectionProgramming.style.display = 'block';
+    chooseHeader.style.display = 'block';
+}
+
+
 function hideSelectionElements() {
     selectionVideoGameQuotes.style.display = 'none';
     selectionProgramming.style.display = 'none';
@@ -60,6 +72,22 @@ function hideSelectionElements() {
 function showPromptElements() {
     promptAnswerContainer.style.display = 'block';
     choicesContainer.style.display = 'block';
+}
+
+
+function showFinalElements() {
+    userScore.style.display = 'block';
+    userScore.innerHTML = `You got ${userCorrectScore} quotes correct out of a possible ${lengthOfQuiz}`
+    returnButton.style.display = 'block';
+}
+
+function hideUserScore() {
+    userScore.style.display = 'none';
+}
+
+
+function hideReturnButton() {
+    returnButton.style.display = 'none';
 }
 
 
@@ -97,10 +125,26 @@ function hideIncorrectNotification() {
     incorrectNotification.style.display = 'none';
 }
 
+function hideAnswerContainer() {
+    promptAnswerContainer.style.display = 'none';
+}
+
 
 function resetStats() {
     userCorrectScore = 0;
     currentPrompt = 0;
+    lengthOfQuiz = 0;
+    promptsArray = [];
+}
+
+
+function showQuizTitle() {
+    quizTitle.style.display = 'block';
+}
+
+
+function hideQuizTitle() {
+    quizTitle.style.display = 'none';
 }
 
 
@@ -135,6 +179,7 @@ function userSelectedVGQuotes() {
         })
 
     quizTitle.innerHTML = 'Video Game Quotes Quiz';
+    showQuizTitle();
 }
 
 
@@ -146,6 +191,7 @@ function revealAnswer(event) {
     // let eventClassArray = event.target.classList;
     if (event.target.classList.contains(promptsArray[currentPrompt].correct_choice)) {
         showCorrectNotification()
+        userCorrectScore += 1;
     }
     else {
         showIncorrectNotification()
@@ -162,12 +208,24 @@ function nextPrompt() {
 
     if (currentPrompt < lengthOfQuiz) {
         showPromptElements();
+        promptAnswerContainer.innerHTML = `${promptsArray[currentPrompt].prompt_text}`;
+        choice0.innerHTML = `${promptsArray[currentPrompt].answer0}`;
+        choice1.innerHTML = `${promptsArray[currentPrompt].answer1}`;
+        choice2.innerHTML = `${promptsArray[currentPrompt].answer2}`;
+        choice3.innerHTML = `${promptsArray[currentPrompt].answer3}`;
     }
+    else {
+        hideAnswerContainer();
+        showFinalElements();
+    }
+}
 
-    promptAnswerContainer.innerHTML = `${promptsArray[currentPrompt].prompt_text}`;
-    choice0.innerHTML = `${promptsArray[currentPrompt].answer0}`;
-    choice1.innerHTML = `${promptsArray[currentPrompt].answer1}`;
-    choice2.innerHTML = `${promptsArray[currentPrompt].answer2}`;
-    choice3.innerHTML = `${promptsArray[currentPrompt].answer3}`;
+
+function returnToStart() {
+    hideUserScore();
+    hideReturnButton();
+    showSelectionElements();
+    hideQuizTitle();
+    resetStats();
 }
 
