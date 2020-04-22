@@ -34,9 +34,9 @@
 
 <button type="button" class="return-button" onclick="">Return to quiz selection</button>
 
-<form action="" method="post">
+<form method="post" class="display-name-form">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form }}
 <input type="submit">
 </form>
 

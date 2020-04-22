@@ -155,3 +155,7 @@ body {
     color: cornflowerblue;
     text-align: center;
 }
+
+.display-name-form {
+    display: none;
+}
