@@ -30,6 +30,9 @@ class QuizUser(models.Model):
     user_id = models.AutoField(primary_key=True)
     display_name = models.CharField(max_length=25)
 
+    def __str__(self):
+        return self.display_name
+
 
 class Score(models.Model):
     score_id = models.AutoField(primary_key=True)

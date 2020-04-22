@@ -25,6 +25,7 @@ const nextButton = document.querySelector('.next-button');
 // Final elements
 const userScore = document.querySelector('.user-score');
 const returnButton = document.querySelector('.return-button');
+const displayNameForm = document.querySelector('.display-name-form')
 
 
 // Add event listeners
@@ -52,99 +53,45 @@ function getCookie(name) {
     return decodeURIComponent(token[0].split('=')[1]);
   }
 
+
 const csrftoken = getCookie('csrftoken');
 
 
+function hideElement(element) {
+    element.style.display = 'none'
+}
+
+
+function showElement(element) {
+    element.style.display = 'block'
+}
+
+
 function showSelectionElements() {
-    selectionVideoGameQuotes.style.display = 'block';
-    selectionProgramming.style.display = 'block';
-    chooseHeader.style.display = 'block';
+    showElement(selectionVideoGameQuotes);
+    showElement(selectionProgramming);
+    showElement(chooseHeader);
 }
 
 
 function hideSelectionElements() {
-    selectionVideoGameQuotes.style.display = 'none';
-    selectionProgramming.style.display = 'none';
-    chooseHeader.style.display = 'none';
+    hideElement(selectionVideoGameQuotes);
+    hideElement(selectionProgramming);
+    hideElement(chooseHeader);
 }
 
 
 function showPromptElements() {
-    promptAnswerContainer.style.display = 'block';
-    choicesContainer.style.display = 'block';
+    showElement(promptAnswerContainer);
+    showElement(choicesContainer);
 }
 
 
 function showFinalElements() {
-    userScore.style.display = 'block';
+    showElement(userScore);
     userScore.innerHTML = `You got ${userCorrectScore} quotes correct out of a possible ${lengthOfQuiz}`
-    returnButton.style.display = 'block';
-}
-
-function hideUserScore() {
-    userScore.style.display = 'none';
-}
-
-
-function hideReturnButton() {
-    returnButton.style.display = 'none';
-}
-
-
-function hideChoices() {
-    choicesContainer.style.display = 'none';
-}
-
-
-function showNextButton() {
-    nextButton.style.display = 'block';
-}
-
-
-function  hideNextButton() {
-    nextButton.style.display = 'none';
-}
-
-
-function showCorrectNotification() {
-    correctNotification.style.display = 'block';
-}
-
-
-function hideCorrectNotification() {
-    correctNotification.style.display = 'none';
-}
-
-
-function showIncorrectNotification() {
-    incorrectNotification.style.display = 'block';
-}
-
-
-function hideIncorrectNotification() {
-    incorrectNotification.style.display = 'none';
-}
-
-function hideAnswerContainer() {
-    promptAnswerContainer.style.display = 'none';
-}
-
-
-function resetStats() {
-    userCorrectScore = 0;
-    currentPrompt = 0;
-    lengthOfQuiz = 0;
-    promptsArray = [];
-}
-
-
-function showQuizTitle() {
-    quizTitle.style.display = 'block';
-}
-
-
-function hideQuizTitle() {
-    quizTitle.style.display = 'none';
+    showElement(returnButton);
+    showElement(displayNameForm);
 }
 
 
@@ -155,7 +102,6 @@ function userSelectedVGQuotes() {
     
     // Tell the backend we've chosen this quiz
     const selectedQuizID = 1;
-
 
     fetch(`http://localhost:8000/api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
         method: 'GET',
@@ -179,32 +125,31 @@ function userSelectedVGQuotes() {
         })
 
     quizTitle.innerHTML = 'Video Game Quotes Quiz';
-    showQuizTitle();
+    showElement(quizTitle);
 }
 
 
 function revealAnswer(event) {
-    showNextButton();
-    hideChoices();
+    showElement(nextButton);
+    hideElement(choicesContainer);
     promptAnswerContainer.innerHTML = `${promptsArray[currentPrompt].answer_text}`;
 
     // let eventClassArray = event.target.classList;
     if (event.target.classList.contains(promptsArray[currentPrompt].correct_choice)) {
-        showCorrectNotification()
+        showElement(correctNotification);
         userCorrectScore += 1;
     }
     else {
-        showIncorrectNotification()
+        showElement(incorrectNotification);
     }
-
 }
 
 
 function nextPrompt() {
     currentPrompt += 1;
-    hideNextButton();
-    hideCorrectNotification();
-    hideIncorrectNotification();
+    hideElement(nextButton);
+    hideElement(correctNotification);
+    hideElement(incorrectNotification);
 
     if (currentPrompt < lengthOfQuiz) {
         showPromptElements();
@@ -215,17 +160,26 @@ function nextPrompt() {
         choice3.innerHTML = `${promptsArray[currentPrompt].answer3}`;
     }
     else {
-        hideAnswerContainer();
+        hideElement(promptAnswerContainer);
         showFinalElements();
     }
 }
 
 
-function returnToStart() {
-    hideUserScore();
-    hideReturnButton();
-    showSelectionElements();
-    hideQuizTitle();
-    resetStats();
+function resetStats() {
+    userCorrectScore = 0;
+    currentPrompt = 0;
+    lengthOfQuiz = 0;
+    promptsArray = [];
 }
 
+
+function returnToStart() {
+    hideElement(userScore);
+    hideElement(returnButton);
+    hideElement(displayNameForm);
+    hideElement(quizTitle);
+
+    showSelectionElements();
+    resetStats();
+}
