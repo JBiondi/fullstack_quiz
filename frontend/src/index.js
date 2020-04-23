@@ -26,17 +26,37 @@ const nextButton = document.querySelector('.next-button');
 const userScore = document.querySelector('.user-score');
 const returnButton = document.querySelector('.return-button');
 const displayNameForm = document.querySelector('.display-name-form')
+const highScoreTable = document.querySelector('.high-score-table')
 
 
 // Add event listeners
-selectionVideoGameQuotes.addEventListener('click', userSelectedVGQuotes);
+if (selectionVideoGameQuotes) {
+    selectionVideoGameQuotes.addEventListener('click', userSelectedVGQuotes);
+}
 
-choice0.addEventListener('click', revealAnswer);
-choice1.addEventListener('click', revealAnswer);
-choice2.addEventListener('click', revealAnswer);
-choice3.addEventListener('click', revealAnswer);
-nextButton.addEventListener('click', nextPrompt);
-returnButton.addEventListener('click', returnToStart);
+if (choice0) {
+    choice0.addEventListener('click', revealAnswer);
+}
+
+if (choice1) {
+    choice1.addEventListener('click', revealAnswer);
+}
+
+if (choice2) {
+    choice2.addEventListener('click', revealAnswer);
+}
+
+if (choice3) {
+    choice3.addEventListener('click', revealAnswer);
+}
+
+if (nextButton) {
+    nextButton.addEventListener('click', nextPrompt);
+}
+
+if (returnButton) {
+    returnButton.addEventListener('click', returnToStart);
+}
 
 
 function getCookie(name) {

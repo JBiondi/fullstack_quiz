@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>High Scores</title>
+    <link rel="shortcut icon" type="image/png" href="{% static '/img/favi.ico' %}"/>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+</head>
+<body>
+
+<table class="high-score-table">
+    <thead>
+        <tr>
+            <th colspan="2">~~~~ Highscores ~~~~</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>name</td>
+            <td>score</td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" class="return-button" onclick="">Return to quiz selection</button>
+
+<script src="{% static "frontend/main.js" %}"></script>
+</body>
+</html>

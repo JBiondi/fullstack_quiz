@@ -8,7 +8,7 @@ def frontend_home_view(request):
 
         if form.is_valid():
             form.save()
-        return render(request, 'frontend/index.html')
+        return render(request, 'frontend/highscores.html')
 
     form = DisplayNameForm()
 
