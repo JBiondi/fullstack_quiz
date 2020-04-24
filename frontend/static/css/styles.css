@@ -114,6 +114,21 @@ body {
     border-radius: 5px;
 }
 
+
+.back-button {
+    background-color: #a4ddc2;
+    font-size: 25px;
+    font-family: 'Hammersmith One', sans-serif;
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    color: rgb(247, 239, 224);
+    margin: 100px;
+    width: 170px;
+    height: 78px;
+    transform: scale(1);
+    cursor: pointer;
+}
+
 .choices-container {
     display: none;
 }

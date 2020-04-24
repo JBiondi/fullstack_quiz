@@ -25,8 +25,11 @@ const nextButton = document.querySelector('.next-button');
 // Final elements
 const userScore = document.querySelector('.user-score');
 const returnButton = document.querySelector('.return-button');
-const displayNameForm = document.querySelector('.display-name-form')
-const highScoreTable = document.querySelector('.high-score-table')
+const displayNameForm = document.querySelector('.display-name-form');
+
+// High score page elements
+const highScoreTable = document.querySelector('.high-score-table');
+const backButton = document.querySelector('.back-button');
 
 
 // Add event listeners
@@ -56,6 +59,10 @@ if (nextButton) {
 
 if (returnButton) {
     returnButton.addEventListener('click', returnToStart);
+}
+
+if (backButton) {
+    backButton.addEventListener('click', resetStats)
 }
 
 
