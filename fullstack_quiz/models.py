@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 class Quiz(models.Model):
@@ -26,20 +25,14 @@ class Prompt(models.Model):
         return self.prompt_text
 
 
-class QuizUser(models.Model):
-    user_id = models.AutoField(primary_key=True)
+class HighScore(models.Model):
+    high_score_id = models.AutoField(primary_key=True)
     display_name = models.CharField(max_length=25)
+    user_correct_score = models.IntegerField()
 
     def __str__(self):
-        return self.display_name
+        return self.display_name, self.user_correct_score
 
-
-class Score(models.Model):
-    score_id = models.AutoField(primary_key=True)
-    quiz_id = models.ForeignKey(Quiz, null=True, on_delete=models.SET_NULL)
-    user_id = models.ForeignKey(QuizUser, null=True, on_delete=models.SET_NULL)
-    score_timestamp = models.DateTimeField(default=timezone.now)
-    score_value = models.CharField(max_length=20)
 
 
 

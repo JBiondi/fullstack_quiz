@@ -35,6 +35,7 @@
 <button type="button" class="return-button" onclick="">Return to quiz selection</button>
 
 <form class="display-name-form" method="post" >
+    <h1>Enter a display name to be featured on the high score board</h1>
     {% csrf_token %}
     {{ form }}
 <input type="submit">

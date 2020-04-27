@@ -1,10 +1,9 @@
 from django import forms
-
-from .models import QuizUser
+from .models import HighScore
 
 
 class DisplayNameForm(forms.ModelForm):
 
     class Meta:
-        model = QuizUser
+        model = HighScore
         fields = ['display_name']
