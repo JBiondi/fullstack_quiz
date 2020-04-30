@@ -27,11 +27,11 @@ class Prompt(models.Model):
 
 class HighScore(models.Model):
     high_score_id = models.AutoField(primary_key=True)
-    display_name = models.CharField(default='Anonymous', null=True, max_length=25)
-    user_correct_score = models.IntegerField()
+    display_name = models.CharField(default='Anonymous', max_length=25)
+    user_correct_score = models.IntegerField(default=-1)
 
     def __str__(self):
-        return self.display_name, self.user_correct_score
+        return f'Display Name: {self.display_name}, Correct Score: {self.user_correct_score}, ID: {self.high_score_id}'
 
 
 

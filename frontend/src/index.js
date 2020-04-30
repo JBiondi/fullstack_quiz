@@ -2,6 +2,7 @@ let promptsArray = [];
 let currentPrompt = 0;
 let lengthOfQuiz = 0;
 let userCorrectScore = 0;
+let currentID;
 
 // Selection screen elements
 const chooseHeader = document.querySelector('.choose-h1');
@@ -23,7 +24,7 @@ const incorrectNotification = document.querySelector('.incorrect-notification');
 const nextButton = document.querySelector('.next-button');
 
 // Final elements
-const userScore = document.querySelector('.user-score');
+const userScoreNotification = document.querySelector('.user-score-notification');
 const returnButton = document.querySelector('.return-button');
 const displayNameForm = document.querySelector('.display-name-form');
 
@@ -114,14 +115,6 @@ function showPromptElements() {
 }
 
 
-function showFinalElements() {
-    showElement(userScore);
-    userScore.innerHTML = `You got ${userCorrectScore} quotes correct out of a possible ${lengthOfQuiz}`
-    showElement(returnButton);
-    showElement(displayNameForm);
-}
-
-
 function userSelectedVGQuotes() {
 
     hideSelectionElements();
@@ -193,6 +186,32 @@ function nextPrompt() {
 }
 
 
+function showFinalElements() {
+    showElement(userScoreNotification);
+    userScoreNotification.innerHTML = `You got ${userCorrectScore} quotes correct out of a possible ${lengthOfQuiz}`
+    showElement(returnButton);
+    showElement(displayNameForm);
+
+    fetch(`http://localhost:8000/api/receive_user_score_api_endpoint/${userCorrectScore}/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken,
+        },
+    })
+        .then(response => {
+            return response.json();
+        })
+        .then(function acquireRelevantID (data) {
+            currentID = data
+
+            if (data) {
+                console.log(currentID)
+            }
+        })
+}
+
+
 function resetStats() {
     userCorrectScore = 0;
     currentPrompt = 0;
@@ -202,7 +221,7 @@ function resetStats() {
 
 
 function returnToStart() {
-    hideElement(userScore);
+    hideElement(userScoreNotification);
     hideElement(returnButton);
     hideElement(displayNameForm);
     hideElement(quizTitle);
