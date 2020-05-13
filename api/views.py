@@ -3,8 +3,6 @@ import json
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from fullstack_quiz.forms import DisplayNameForm
-
 from fullstack_quiz.models import Prompt
 from fullstack_quiz.models import HighScore
 
@@ -35,21 +33,15 @@ def receive_user_score_view(request, user_correct_score=None):
 
         current_id = current_user.high_score_id
 
+        request.session['current ID'] = current_id
+
         json_current_id = json.dumps(current_id)
 
         return HttpResponse(json_current_id, content_type='application/json')
 
 
 def high_score_page_view(request):
-    # the form isn't on this page right?
-    # if request.method == 'POST':
-    #     form = DisplayNameForm(request.POST)
-    #
-    #     if form.is_valid():
-    #         form.save()
-    #     return render(request, 'frontend/highscores.html')
-    #
-    # form = DisplayNameForm()
-    #
-    # context = {'form': form}
-    return render(request, 'frontend/highscores.html') # put context back here if needed
+
+    highscores = HighScore.objects.order_by('user_correct_score')
+
+    return render(request, 'frontend/highscores.html', {'highscores': highscores})

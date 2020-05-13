@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from fullstack_quiz.forms import DisplayNameForm
+from fullstack_quiz.models import HighScore
 
 
 def frontend_home_view(request):
     if request.method == 'POST':
-        form = DisplayNameForm(request.POST)
+
+        current_profile = HighScore.objects.get(pk=request.session['current ID'])
+
+        form = DisplayNameForm(request.POST, instance=current_profile)
 
         if form.is_valid():
             form.save()
