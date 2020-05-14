@@ -40,8 +40,6 @@ def receive_user_score_view(request, user_correct_score=None):
         return HttpResponse(json_current_id, content_type='application/json')
 
 
-def high_score_page_view(request):
-
-    highscores = HighScore.objects.order_by('user_correct_score')
-
-    return render(request, 'frontend/highscores.html', {'highscores': highscores})
+# def high_score_page_view(request):
+#
+#     return render(request, 'frontend/highscores.html', {'highscores': evaluated_highscores})

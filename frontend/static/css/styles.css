@@ -175,13 +175,15 @@ body {
     display: none;
 }
 
-table,
-td {
-    border: 1px solid #333;
+table, th, td {
+    width: 70%;
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
-thead,
-tfoot {
-    background-color: #333;
-    color: #fff;
+th {
+    background-color: lightblue;
+    padding: 5px;
+    text-align: left;
 }
+

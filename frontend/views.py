@@ -12,7 +12,11 @@ def frontend_home_view(request):
 
         if form.is_valid():
             form.save()
-        return render(request, 'frontend/highscores.html')
+
+        highscores = HighScore.objects.order_by('-user_correct_score')
+        context = {'highscores': highscores}
+
+        return render(request, 'frontend/highscores.html', context)
 
     form = DisplayNameForm()
 
