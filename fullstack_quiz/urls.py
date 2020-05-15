@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import QuizListView
+# from .views import QuizListView
 # from .views import home_view
 
 
