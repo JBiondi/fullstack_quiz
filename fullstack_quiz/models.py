@@ -10,7 +10,8 @@ class Quiz(models.Model):
 
     def get_quiz_length(self, quiz_id):
         # Do a DB query to find the amount of prompts associated with given id
-        return Prompt.objects.filter(quiz_id=quiz_id)
+        prompts_qs = Prompt.objects.filter(quiz_id=quiz_id)
+        return len(list(prompts_qs))
 
 
 class Prompt(models.Model):
@@ -39,7 +40,13 @@ class HighScore(models.Model):
         return f'Display Name: {self.display_name}, Correct Score: {self.user_correct_score}, ID: {self.high_score_id}'
 
     def score_as_percent(self):
-        total_questions = self.associated_quiz_id.get_quiz_length(self.associated_quiz_id)
+
+        relevant_quiz = Quiz.objects.get(pk=self.associated_quiz_id)
+        relevant_quiz_id = relevant_quiz.quiz_id
+
+        total_questions = relevant_quiz.get_quiz_length(relevant_quiz_id)
 
         return self.user_correct_score / total_questions * 100
 
+    def cool_method(self):
+        print('hey now hey now')
