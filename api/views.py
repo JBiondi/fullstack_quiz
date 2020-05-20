@@ -20,13 +20,11 @@ def quiz_selection_handler_view(request, selected_quiz_id=None):
 
 
 def receive_user_score_view(request, user_correct_score=None):
-    # Should I change this to only accept POST requests instead of having this conditional statement?
     if request.method == 'POST':
 
         current_quiz = request.session['current quiz id']
-        current_attempt = HighScore(user_correct_score=user_correct_score, associated_quiz_id_id=current_quiz)
+        current_attempt = HighScore(user_correct_score=user_correct_score, associated_quiz_id=current_quiz)
         current_attempt.save()
-
         current_attempt_id = current_attempt.high_score_id
 
         request.session['current ID'] = current_attempt_id

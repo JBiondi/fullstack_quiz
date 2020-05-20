@@ -18,25 +18,10 @@
   {% for item in highscores %}
       <tr>
         <td>{{ item.display_name }}</td>
-        <td>{{ 'placeholder' }}</td>
+        <td>{{ item.score_as_percent }}</td>
       </tr>
   {% endfor %}
 </table>
-
-{#<table>#}
-{#    <tr>#}
-{#        <th>Name</th>#}
-{#        ...#}
-{#        <th>Score</th>#}
-{#    </tr>#}
-{#    {% for item in highscores %}#}
-{#    <tr>#}
-{#        <td>{{ item.display_name }}</td>#}
-{#        ...#}
-{#        <td>{{ item.user_correct_score }}</td>#}
-{#    </tr>#}
-{#    {% endfor %}#}
-{#</table>#}
 
 <a href="http://localhost:8000/">
 <button type="button" class="back-button" onclick="">Return to quiz selection</button>
