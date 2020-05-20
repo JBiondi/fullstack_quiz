@@ -17,14 +17,13 @@ def frontend_home_view(request):
 
         highscores_qs = HighScore.objects.filter(associated_quiz_id=current_quiz).order_by('-user_correct_score')
 
-
         display_names = [item.display_name for item in highscores_qs]
         print(display_names)
 
         scores = [item.user_correct_score for item in highscores_qs]
         print(scores)
 
-        percents = [item.cool_method() for item in highscores_qs]
+        percents = [item.score_as_percent() for item in highscores_qs]
         print(percents)
 
         context = {'highscores': highscores_qs}

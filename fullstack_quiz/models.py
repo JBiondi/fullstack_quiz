@@ -37,7 +37,8 @@ class HighScore(models.Model):
     user_correct_score = models.IntegerField(default=-1)
 
     def __str__(self):
-        return f'Display Name: {self.display_name}, Correct Score: {self.user_correct_score}, ID: {self.high_score_id}'
+        return f'Display Name is: {self.display_name}, Correct Score is: {self.user_correct_score}, ' \
+               f'ID is: {self.high_score_id}, associated quiz id is: {self.associated_quiz_id}'
 
     def score_as_percent(self):
 
