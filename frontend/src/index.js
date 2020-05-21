@@ -38,6 +38,10 @@ if (selectionVideoGameQuotes) {
     selectionVideoGameQuotes.addEventListener('click', userSelectedVGQuotes);
 }
 
+if (selectionProgramming) {
+    selectionProgramming.addEventListener('click', userSelectedProgramming);
+}
+
 if (choice0) {
     choice0.addEventListener('click', revealAnswer);
 }
@@ -116,12 +120,23 @@ function showPromptElements() {
 
 
 function userSelectedVGQuotes() {
+    // Refactor these selection functions to be less bad
+    const quizID = 1
+    grabQuiz(quizID)
+}
+
+
+function userSelectedProgramming() {
+    // Refactor these selection functions to be less bad
+    const quizID = 2
+    grabQuiz(quizID)
+}
+
+
+function grabQuiz(selectedQuizID) {
 
     hideSelectionElements();
     showPromptElements();
-    
-    // Tell the backend we've chosen this quiz
-    const selectedQuizID = 1;
 
     fetch(`http://localhost:8000/api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
         method: 'GET',
