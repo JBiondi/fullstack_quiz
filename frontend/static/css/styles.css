@@ -2,6 +2,7 @@ body {
     /* I should move this into the img folder once I figure out how to resolve the path */
     /*background-image: url(dungeon.png);*/
     /*background-size: auto;*/
+    /*display: flex;*/
 }
 
 
@@ -36,7 +37,7 @@ body {
     font-size: 25px;
     font-family: 'Hammersmith One', sans-serif;
     text-align: center;
-    background: #3ef35c;
+    background: tomato;
     width: 92px;
     height: 32px;
     margin: auto;
@@ -49,10 +50,11 @@ body {
 .prompt-answer-container {
     background-color: greenyellow;
     /*border: 2px solid black;*/
-    font-size: 66px;
+    font-size: 45px;
     font-style: italic;
     color: cadetblue;
     text-align: center;
+    align-items: center;
     width: 500px;
     height: 300px;
     margin: 15px auto;

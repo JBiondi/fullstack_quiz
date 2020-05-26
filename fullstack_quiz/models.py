@@ -21,12 +21,12 @@ class Prompt(models.Model):
     answer1 = models.CharField(default='answer goes here', max_length=50)
     answer2 = models.CharField(default='answer goes here', max_length=50)
     answer3 = models.CharField(default='answer goes here', max_length=50)
-    correct_choice = models.CharField(default='choiceX', max_length=50)
+    correct_choice = models.CharField(default='choiceIndexX', max_length=50)
     answer_text = models.TextField(default='answer text goes here')
     # associated_image = models.ImageField()
 
     def __str__(self):
-        return self.prompt_text
+        return f'{self.associated_quiz_id}, {self.prompt_text}'
 
 
 class HighScore(models.Model):
@@ -44,5 +44,9 @@ class HighScore(models.Model):
         relevant_quiz_id = relevant_quiz.quiz_id
         total_questions = relevant_quiz.get_quiz_length(relevant_quiz_id)
 
-        return f'{self.user_correct_score / total_questions * 100} %'
+        return f'{round(self.user_correct_score / total_questions * 100, 2)} %'
 
+    def get_associated_quiz_topic(self):
+        quiz = Quiz.objects.get(pk=self.associated_quiz_id)
+        print(quiz)
+        return quiz.quiz_topic
