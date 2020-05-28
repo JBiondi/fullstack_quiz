@@ -3,6 +3,7 @@ body {
     /*background-image: url(dungeon.png);*/
     /*background-size: auto;*/
     /*display: flex;*/
+    box-sizing: border-box;
 }
 
 
@@ -10,9 +11,22 @@ body {
     text-align: center;
     color: darkblue;
 }
+
+.flex-container {
+    /*background-color: black;*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
 .choose_quiz_img {
-    height: 250px;
-    width: 250px;
+    max-width: 250px;
+    max-height: 250px;
+    border: black solid 5px;
+    border-radius: 10px;
+    margin: 10px;
+;
 }
 
 .quiz-title {
