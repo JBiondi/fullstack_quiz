@@ -9,7 +9,8 @@ const chooseHeader = document.querySelector('.choose-h1');
 const selectionVideoGameQuotes = document.querySelector('.selection-vg-quotes');
 const selectionProgramming = document.querySelector('.selection-programming');
 
-// Prompt elements
+// Quiz screen elements
+const body = document.body;
 const promptAnswerContainer = document.querySelector('.prompt-answer-container');
 const quizTitle = document.querySelector('.quiz-title');
 const choicesContainer = document.querySelector('.choices-container');
@@ -99,6 +100,11 @@ function showElement(element) {
 }
 
 
+function showFlexElement(element) {
+    element.style.display = 'flex'
+}
+
+
 function showSelectionElements() {
     showElement(selectionVideoGameQuotes);
     showElement(selectionProgramming);
@@ -114,21 +120,24 @@ function hideSelectionElements() {
 
 
 function showPromptElements() {
-    showElement(promptAnswerContainer);
-    showElement(choicesContainer);
+    showFlexElement(promptAnswerContainer)
+    showFlexElement(choicesContainer);
 }
 
 
 function userSelectedVGQuotes() {
-    // Refactor these selection functions to be less bad
+    promptAnswerContainer.style.fontFamily = 'IM Fell English'
+    body.style.backgroundImage = "url('static/img/vg_background2.png')"
+    quizTitle.innerHTML = '⌖  video game quotes quiz  ⌖';
     const quizID = 1
     grabQuiz(quizID)
 }
 
 
 function userSelectedProgramming() {
-    // Refactor these selection functions to be less bad
+
     const quizID = 2
+    quizTitle.innerHTML = '⌨ programming with django quiz ⌨';
     grabQuiz(quizID)
 }
 
@@ -159,7 +168,6 @@ function grabQuiz(selectedQuizID) {
             lengthOfQuiz = promptsArray.length;
         })
 
-    quizTitle.innerHTML = 'Video Game Quotes Quiz';
     showElement(quizTitle);
 }
 
@@ -169,7 +177,6 @@ function revealAnswer(event) {
     hideElement(choicesContainer);
     promptAnswerContainer.innerHTML = `${promptsArray[currentPrompt].answer_text}`;
 
-    // let eventClassArray = event.target.classList;
     if (event.target.classList.contains(promptsArray[currentPrompt].correct_choice)) {
         showElement(correctNotification);
         userCorrectScore += 1;

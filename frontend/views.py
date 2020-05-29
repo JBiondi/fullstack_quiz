@@ -14,7 +14,10 @@ def frontend_home_view(request):
             form.save()
 
         highscores_qs = HighScore.objects.filter(associated_quiz_id=current_quiz).order_by('-user_correct_score')
-        context = {'highscores': highscores_qs}
+
+        quiz_topic = current_profile.get_associated_quiz_topic()
+
+        context = {'highscores': highscores_qs, 'quiz_topic': quiz_topic}
 
         return render(request, 'frontend/highscores.html', context)
 
