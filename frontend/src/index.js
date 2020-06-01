@@ -137,7 +137,7 @@ function userSelectedVGQuotes() {
 function userSelectedProgramming() {
 
     const quizID = 2
-    quizTitle.innerHTML = '⌨ programming with django quiz ⌨';
+    quizTitle.innerHTML = '⌨ programming with django ⌨';
     grabQuiz(quizID)
 }
 

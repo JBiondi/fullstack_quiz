@@ -15,6 +15,7 @@ body {
     margin-top: 100px;
 }
 
+
 .choice-flex-container {
     /*background-color: black;*/
     display: flex;
@@ -31,11 +32,13 @@ body {
     margin: 10px;
 }
 
+
 .choose_quiz_img:hover {
     /*opacity: 0.9;*/
     transform: scale(.95);
     transition: transform .2s;
 }
+
 
 .quiz-title {
     color: #1f2b2b;
@@ -46,33 +49,16 @@ body {
     margin-bottom: 70px;
 }
 
-.correct-notification {
-    font-size: 25px;
-    font-family: 'Hammersmith One', sans-serif;
+
+.correct-notification, .incorrect-notification {
+    font-size: 30px;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    color: #1f2b2b;
     text-align: center;
-    background: #3ef35c;
-    width: 92px;
-    height: 32px;
-    margin: auto;
-    padding: 5px;
-    border: 2px solid black;
-    border-radius: 5px;
+    margin-top: 150px;
     display: none;
 }
 
-.incorrect-notification {
-    font-size: 25px;
-    font-family: 'Hammersmith One', sans-serif;
-    text-align: center;
-    background: tomato;
-    width: 92px;
-    height: 32px;
-    margin: auto;
-    padding: 5px;
-    border: 2px solid black;
-    border-radius: 5px;
-    display: none;
-}
 
 .prompt-answer-container {
     font-size: 45px;
@@ -82,12 +68,12 @@ body {
     text-align: center;
     align-items: center;
     width: 500px;
-    margin: 25px auto;
-    margin-bottom: 40px;
+    margin: 25px auto 40px;
     justify-content: center;
     border-radius: 5px;
     display: none;
 }
+
 
 .next-button {
     background-color: #5480d1;
@@ -104,9 +90,11 @@ body {
     display: none;
 }
 
+
 .next-button:hover {
     background-color: #a4ddc2;
 }
+
 
 .next-button:active {
     transform: scale(.95);
@@ -131,9 +119,11 @@ body {
     display: none;
 }
 
+
 .return-button:hover {
     background-color: #a4ddc2;
 }
+
 
 .return-button:active {
     transform: scale(.95);
@@ -157,10 +147,12 @@ body {
     cursor: pointer;
 }
 
+
 .choices-container {
     display: none;
     flex-direction: column;
 }
+
 
 .choice {
     width: 250px;
@@ -181,9 +173,11 @@ body {
     border-radius: 5px;
 }
 
+
 .choice:hover {
     background-color: silver;
 }
+
 
 .choice:active {
     transform: scale(.95);
@@ -198,14 +192,17 @@ body {
     display: none;
 }
 
+
 .display-name-prompt {
     color: cornflowerblue;
     text-align: center;
 }
 
+
 .display-name-form {
     display: none;
 }
+
 
 table, th, td {
     width: 40%;

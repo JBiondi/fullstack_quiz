@@ -25,10 +25,9 @@ def receive_user_score_view(request, user_correct_score=None):
         current_quiz = request.session['current quiz id']
         current_attempt = HighScore(user_correct_score=user_correct_score, associated_quiz_id=current_quiz)
         current_attempt.save()
+
         current_attempt_id = current_attempt.high_score_id
-
         request.session['current ID'] = current_attempt_id
-
         json_current_user_id = json.dumps(current_attempt_id)
 
         return HttpResponse(json_current_user_id, content_type='application/json')
