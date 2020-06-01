@@ -126,20 +126,32 @@ function showPromptElements() {
 
 
 function userSelectedVGQuotes() {
-    promptAnswerContainer.style.fontFamily = 'IM Fell English'
-    body.style.backgroundImage = "url('static/img/vg_background2.png')"
-    // ⌖
+    promptAnswerContainer.style.fontFamily = 'IM Fell English';
+    body.style.backgroundImage = "url('static/img/vg_background2.png')";
+    correctNotification.innerHTML = '⌖  CORRECT  ⌖';
+    incorrectNotification.innerHTML = '⌖  INCORRECT  ⌖';
     quizTitle.innerHTML = ' - video game quotes quiz - ';
-    const quizID = 1
-    grabQuiz(quizID)
+    nextButton.innerHTML = '➳';
+    nextButton.style.paddingLeft = '32px';
+
+    const quizID = 1;
+    grabQuiz(quizID);
 }
 
 
 function userSelectedProgramming() {
-
-    const quizID = 2
+    promptAnswerContainer.style.fontFamily = 'Cute Font, cursive';
+    promptAnswerContainer.style.fontSize = '58px';
+    correctNotification.innerHTML = '⌨  CORRECT  ⌨';
+    incorrectNotification.innerHTML = '⌨  INCORRECT  ⌨';
     quizTitle.innerHTML = '- programming with django -';
-    grabQuiz(quizID)
+    nextButton.style.paddingLeft = '0px';
+    nextButton.style.paddingRight = '10px';
+    nextButton.style.fontSize = '75px';
+    nextButton.innerHTML = '>>>';
+
+    const quizID = 2;
+    grabQuiz(quizID);
 }
 
 
