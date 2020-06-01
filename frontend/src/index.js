@@ -128,7 +128,8 @@ function showPromptElements() {
 function userSelectedVGQuotes() {
     promptAnswerContainer.style.fontFamily = 'IM Fell English'
     body.style.backgroundImage = "url('static/img/vg_background2.png')"
-    quizTitle.innerHTML = '⌖  video game quotes quiz  ⌖';
+    // ⌖
+    quizTitle.innerHTML = ' - video game quotes quiz - ';
     const quizID = 1
     grabQuiz(quizID)
 }
@@ -137,7 +138,7 @@ function userSelectedVGQuotes() {
 function userSelectedProgramming() {
 
     const quizID = 2
-    quizTitle.innerHTML = '⌨ programming with django ⌨';
+    quizTitle.innerHTML = '- programming with django -';
     grabQuiz(quizID)
 }
 
@@ -173,7 +174,7 @@ function grabQuiz(selectedQuizID) {
 
 
 function revealAnswer(event) {
-    showElement(nextButton);
+    showFlexElement(nextButton);
     hideElement(choicesContainer);
     promptAnswerContainer.innerHTML = `${promptsArray[currentPrompt].answer_text}`;
 

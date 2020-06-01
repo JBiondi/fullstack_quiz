@@ -8,7 +8,6 @@ body {
 .choose-h1 {
     text-align: center;
     color: #0a0a36;
-    /*font-family: 'Chelsea Market', cursive;*/
     font-family: 'Sawarabi Mincho', sans-serif;
     font-size: 35px;
     font-weight: bold;
@@ -17,7 +16,6 @@ body {
 
 
 .choice-flex-container {
-    /*background-color: black;*/
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -34,7 +32,6 @@ body {
 
 
 .choose_quiz_img:hover {
-    /*opacity: 0.9;*/
     transform: scale(.95);
     transition: transform .2s;
 }
@@ -56,19 +53,21 @@ body {
     color: #1f2b2b;
     text-align: center;
     margin-top: 150px;
+    margin-bottom: 40px;
     display: none;
 }
 
 
 .prompt-answer-container {
     font-size: 45px;
-    /*font-family: 'IM Fell English', serif;*/
     font-family: serif;
     color: brown;
     text-align: center;
     align-items: center;
     width: 500px;
-    margin: 25px auto 40px;
+    margin: auto;
+    margin-top: 75px;
+    margin-bottom: 15px;
     justify-content: center;
     border-radius: 5px;
     display: none;
@@ -76,23 +75,25 @@ body {
 
 
 .next-button {
-    background-color: #5480d1;
-    font-size: 20px;
-    font-family: 'Hammersmith One', sans-serif;
-    /*border: 1px solid black;*/
-    border-radius: 5px;
-    color: rgb(247, 239, 224);
+    font-size: 90px;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-stretch: ultra-expanded;
+    text-align: center;
+    opacity: .85;
+    color: #1f2b2b;
     margin: auto;
-    width: 90px;
-    height: 38px;
-    transform: scale(1);
+    width: 109px;
     cursor: pointer;
     display: none;
+    align-items: center;
+    padding-left: 32px;
+
 }
 
 
 .next-button:hover {
-    background-color: #a4ddc2;
+    transform: scale(.80);
+    transition: transform .1s;
 }
 
 
@@ -108,7 +109,6 @@ body {
     background-color: #5480d1;
     font-size: 20px;
     font-family: 'Hammersmith One', sans-serif;
-    /*border: 1px solid black;*/
     border-radius: 5px;
     color: rgb(247, 239, 224);
     margin: 100px;
@@ -137,7 +137,6 @@ body {
     background-color: #a4ddc2;
     font-size: 25px;
     font-family: 'Hammersmith One', sans-serif;
-    /*border: 1px solid black;*/
     border-radius: 5px;
     color: rgb(247, 239, 224);
     margin: 100px;
@@ -151,6 +150,7 @@ body {
 .choices-container {
     display: none;
     flex-direction: column;
+    margin-top: 70px;
 }
 
 
@@ -163,13 +163,9 @@ body {
     color: white;
     font-size: 17px;
     font-family: 'Sawarabi Mincho', sans-serif;
-    /*font-weight: bold;*/
     cursor: pointer;
     transform: scale(1);
     margin: 10px auto;
-    /*padding-left: 20px;*/
-    /*padding-right: 20px;*/
-    /*border: 1px solid black;*/
     border-radius: 5px;
 }
 
@@ -215,4 +211,3 @@ th {
     padding: 5px;
     text-align: left;
 }
-
