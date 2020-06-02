@@ -38,7 +38,7 @@ body {
 
 
 .quiz-title {
-    color: #1f2b2b;
+    /*color: #1f2b2b;*/
     text-align: center;
     font-family: 'Sawarabi Mincho', sans-serif;
     font-size: 25px;
@@ -61,7 +61,7 @@ body {
 .prompt-answer-container {
     font-size: 45px;
     font-family: serif;
-    color: brown;
+    /*color: brown;*/
     text-align: center;
     align-items: center;
     width: 500px;
@@ -80,7 +80,7 @@ body {
     font-stretch: ultra-expanded;
     text-align: center;
     opacity: .85;
-    color: #1f2b2b;
+    /*color: #1f2b2b;*/
     margin: auto;
     width: 109px;
     cursor: pointer;
@@ -157,7 +157,7 @@ body {
 .choice {
     width: 250px;
     height: 50px;
-    background-color: lightslategrey;
+    /*background-color: lightslategrey;*/
     text-align: center;
     line-height: 55px;
     color: white;
@@ -210,4 +210,16 @@ th {
     background-color: lightblue;
     padding: 5px;
     text-align: left;
+}
+
+.photo-credit {
+    display: none;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    float: right;
+	/*padding-bottom: 10px;*/
+	padding-top: 110px;
+	text-align: right;
+	bottom: 0;
+	width: 100%;
+    color: silver;
 }

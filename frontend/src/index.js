@@ -14,10 +14,12 @@ const body = document.body;
 const promptAnswerContainer = document.querySelector('.prompt-answer-container');
 const quizTitle = document.querySelector('.quiz-title');
 const choicesContainer = document.querySelector('.choices-container');
+const allChoices = document.querySelectorAll('.choice');
 const choice0 = document.querySelector('.choiceIndex0');
 const choice1 = document.querySelector('.choiceIndex1');
 const choice2 = document.querySelector('.choiceIndex2');
 const choice3 = document.querySelector('.choiceIndex3');
+const photoCredit = document.querySelector('.photo-credit');
 
 // Answer elements
 const correctNotification = document.querySelector('.correct-notification');
@@ -36,11 +38,11 @@ const backButton = document.querySelector('.back-button');
 
 // Add event listeners
 if (selectionVideoGameQuotes) {
-    selectionVideoGameQuotes.addEventListener('click', userSelectedVGQuotes);
+    selectionVideoGameQuotes.addEventListener('click', userSelectedVGQuotesQuiz);
 }
 
 if (selectionProgramming) {
-    selectionProgramming.addEventListener('click', userSelectedProgramming);
+    selectionProgramming.addEventListener('click', userSelectedDjangoQuiz);
 }
 
 if (choice0) {
@@ -68,7 +70,7 @@ if (returnButton) {
 }
 
 if (backButton) {
-    backButton.addEventListener('click', resetStats)
+    backButton.addEventListener('click', resetStats);
 }
 
 
@@ -91,17 +93,17 @@ const csrftoken = getCookie('csrftoken');
 
 
 function hideElement(element) {
-    element.style.display = 'none'
+    element.style.display = 'none';
 }
 
 
 function showElement(element) {
-    element.style.display = 'block'
+    element.style.display = 'block';
 }
 
 
 function showFlexElement(element) {
-    element.style.display = 'flex'
+    element.style.display = 'flex';
 }
 
 
@@ -120,42 +122,70 @@ function hideSelectionElements() {
 
 
 function showPromptElements() {
-    showFlexElement(promptAnswerContainer)
+    showFlexElement(promptAnswerContainer);
     showFlexElement(choicesContainer);
 }
 
 
-function userSelectedVGQuotes() {
+function applyVideoGameQuizStyling() {
     promptAnswerContainer.style.fontFamily = 'IM Fell English';
+    promptAnswerContainer.style.color = 'brown';
     body.style.backgroundImage = "url('static/img/vg_background2.png')";
     correctNotification.innerHTML = '⌖  CORRECT  ⌖';
     incorrectNotification.innerHTML = '⌖  INCORRECT  ⌖';
     quizTitle.innerHTML = ' - video game quotes quiz - ';
+    quizTitle.style.color = '#1f2b2b';
+    allChoices.forEach(function (choice) {
+        choice.style.backgroundColor = 'lightslategrey';
+    })
     nextButton.innerHTML = '➳';
+    nextButton.style.color = '#1f2b2b'
     nextButton.style.paddingLeft = '32px';
-
-    const quizID = 1;
-    grabQuiz(quizID);
 }
 
 
-function userSelectedProgramming() {
+function applyDjangoQuizStyling() {
     promptAnswerContainer.style.fontFamily = 'Cute Font, cursive';
+    promptAnswerContainer.style.color = 'ivory'
+    body.style.backgroundImage = "url('static/img/django_background5.png')";
     promptAnswerContainer.style.fontSize = '58px';
     correctNotification.innerHTML = '⌨  CORRECT  ⌨';
+    correctNotification.style.color = 'ivory';
     incorrectNotification.innerHTML = '⌨  INCORRECT  ⌨';
-    quizTitle.innerHTML = '- programming with django -';
+    incorrectNotification.style.color = 'ivory';
+    quizTitle.innerHTML = '- programming with django quiz -';
+    quizTitle.style.color = 'cornsilk'
+    allChoices.forEach(function (choice) {
+        choice.style.backgroundColor = 'cornsilk';
+        choice.style.color = '#1f2b2b'
+    })
     nextButton.style.paddingLeft = '0px';
     nextButton.style.paddingRight = '10px';
     nextButton.style.fontSize = '75px';
+    nextButton.style.color = 'ivory';
+    nextButton.style.fontWeight = 'bold';
     nextButton.innerHTML = '>>>';
-
-    const quizID = 2;
-    grabQuiz(quizID);
+    showElement(photoCredit);
 }
 
 
-function grabQuiz(selectedQuizID) {
+function userSelectedVGQuotesQuiz() {
+    applyVideoGameQuizStyling();
+
+    const quizID = 1;
+    getQuiz(quizID);
+}
+
+
+function userSelectedDjangoQuiz() {
+    applyDjangoQuizStyling();
+
+    const quizID = 2;
+    getQuiz(quizID);
+}
+
+
+function getQuiz(selectedQuizID) {
 
     hideSelectionElements();
     showPromptElements();
