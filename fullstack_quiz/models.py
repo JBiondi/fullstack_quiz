@@ -23,7 +23,6 @@ class Prompt(models.Model):
     answer3 = models.CharField(default='answer goes here', max_length=50)
     correct_choice = models.CharField(default='choiceIndexX', max_length=50)
     answer_text = models.TextField(default='answer text goes here')
-    # associated_image = models.ImageField()
 
     def __str__(self):
         return f'{self.associated_quiz_id}, {self.prompt_text}'
@@ -32,7 +31,7 @@ class Prompt(models.Model):
 class HighScore(models.Model):
     high_score_id = models.AutoField(primary_key=True)
     associated_quiz_id = models.IntegerField(default=-1)
-    display_name = models.CharField(default='Anonymous', max_length=25)
+    display_name = models.CharField(default='anonymous', max_length=25)
     user_correct_score = models.IntegerField(default=-1)
 
     def __str__(self):
@@ -48,5 +47,4 @@ class HighScore(models.Model):
 
     def get_associated_quiz_topic(self):
         quiz = Quiz.objects.get(pk=self.associated_quiz_id)
-        print(quiz)
         return quiz.quiz_topic

@@ -33,7 +33,7 @@ const displayNameForm = document.querySelector('.display-name-form');
 
 // High score page elements
 const highScoreTable = document.querySelector('.high-score-table');
-const backButton = document.querySelector('.back-button');
+const highscoreReturnButton = document.querySelector('.highscore-page-return-button');
 
 
 // Add event listeners
@@ -69,8 +69,8 @@ if (returnButton) {
     returnButton.addEventListener('click', returnToStart);
 }
 
-if (backButton) {
-    backButton.addEventListener('click', resetStats);
+if (highscoreReturnButton) {
+    highscoreReturnButton.addEventListener('click', returnToStart);
 }
 
 
@@ -130,7 +130,7 @@ function showPromptElements() {
 function applyVideoGameQuizStyling() {
     promptAnswerContainer.style.fontFamily = 'IM Fell English';
     promptAnswerContainer.style.color = 'brown';
-    body.style.backgroundImage = "url('static/img/vg_background2.png')";
+    body.style.backgroundImage = "url('static/img/video_game_quotes_quiz_background.png')";
     correctNotification.innerHTML = '⌖  CORRECT  ⌖';
     incorrectNotification.innerHTML = '⌖  INCORRECT  ⌖';
     quizTitle.innerHTML = ' - video game quotes quiz - ';
@@ -147,7 +147,7 @@ function applyVideoGameQuizStyling() {
 function applyDjangoQuizStyling() {
     promptAnswerContainer.style.fontFamily = 'Cute Font, cursive';
     promptAnswerContainer.style.color = 'ivory'
-    body.style.backgroundImage = "url('static/img/django_background5.png')";
+    body.style.backgroundImage = "url('static/img/django_quiz_background.png')";
     promptAnswerContainer.style.fontSize = '58px';
     correctNotification.innerHTML = '⌨  CORRECT  ⌨';
     correctNotification.style.color = 'ivory';
@@ -254,7 +254,7 @@ function nextPrompt() {
 function showFinalElements() {
     showElement(userScoreNotification);
     userScoreNotification.innerHTML = `You got ${userCorrectScore} quotes correct out of a possible ${lengthOfQuiz}`
-    showElement(returnButton);
+    showFlexElement(returnButton);
     showElement(displayNameForm);
 
     fetch(`http://localhost:8000/api/receive_user_score_api_endpoint/${userCorrectScore}/`, {

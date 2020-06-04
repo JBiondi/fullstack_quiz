@@ -4,29 +4,37 @@
     {% load static %}
     <meta charset="UTF-8">
     <title>High Scores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap&family=IM+Fell+English:ital@1&family=Cute+Font" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="{% static '/img/favi.ico' %}"/>
     <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body>
 
-<table>
-  <tr>
-    <th>Display Name</th>
-    <th>Score</th>
-  </tr>
+<div class="highscore-page-return-button">« return to quiz selection</div>
 
-  <tr>HighScores for the {{ quiz_topic }} quiz</tr>
+<div class="table-flex-container">
+    <div class="table-title"> - highscores for the {{ quiz_topic }} quiz -</div>
 
-  {% for item in highscores %}
+    <table>
       <tr>
-        <td>{{ item.display_name }}</td>
-        <td>{{ item.score_as_percent }}</td>
+        <th>display name</th>
+        <th>score</th>
       </tr>
-  {% endfor %}
-</table>
+
+
+
+      {% for item in highscores %}
+          <tr>
+            <td>{{ item.display_name }}</td>
+            <td>{{ item.score_as_percent }}</td>
+          </tr>
+      {% endfor %}
+    </table>
+
+</div>
 
 <a href="http://localhost:8000/">
-<button type="button" class="back-button" onclick="">Return to quiz selection</button>
+
 </a>
 
 <script src="{% static "frontend/main.js" %}"></script>

@@ -38,7 +38,6 @@ body {
 
 
 .quiz-title {
-    /*color: #1f2b2b;*/
     text-align: center;
     font-family: 'Sawarabi Mincho', sans-serif;
     font-size: 25px;
@@ -61,7 +60,6 @@ body {
 .prompt-answer-container {
     font-size: 45px;
     font-family: serif;
-    /*color: brown;*/
     text-align: center;
     align-items: center;
     width: 500px;
@@ -80,13 +78,11 @@ body {
     font-stretch: ultra-expanded;
     text-align: center;
     opacity: .85;
-    /*color: #1f2b2b;*/
     margin: auto;
     width: 109px;
     cursor: pointer;
     display: none;
     align-items: center;
-    /*padding-left: 32px;*/
 
 }
 
@@ -106,17 +102,16 @@ body {
 
 
 .return-button {
-    background-color: #5480d1;
-    font-size: 20px;
-    font-family: 'Hammersmith One', sans-serif;
+    font-size: 15px;
+    font-family: 'Sawarabi Mincho', sans-serif;
     border-radius: 5px;
-    color: rgb(247, 239, 224);
-    margin: 100px;
-    width: 190px;
-    height: 88px;
+    color: #1f2b2b;
     transform: scale(1);
     cursor: pointer;
+    /*make this none again v*/
     display: none;
+    align-items: center;
+    text-align: center;
 }
 
 
@@ -133,17 +128,15 @@ body {
 }
 
 
-.back-button {
-    background-color: #a4ddc2;
-    font-size: 25px;
-    font-family: 'Hammersmith One', sans-serif;
+.highscore-page-return-button {
+    font-size: 15px;
+    font-family: 'Sawarabi Mincho', sans-serif;
     border-radius: 5px;
-    color: rgb(247, 239, 224);
-    margin: 100px;
-    width: 170px;
-    height: 78px;
-    transform: scale(1);
+    color: #1f2b2b;
     cursor: pointer;
+    /*make this none again v*/
+    display: flex;
+    text-align: right;
 }
 
 
@@ -157,7 +150,6 @@ body {
 .choice {
     width: 250px;
     height: 50px;
-    /*background-color: lightslategrey;*/
     text-align: center;
     line-height: 55px;
     color: white;
@@ -172,6 +164,8 @@ body {
 
 .choice:hover {
     background-color: silver;
+    transform: scale(.95);
+    transition: transform .2s;
 }
 
 
@@ -200,24 +194,47 @@ body {
 }
 
 
+.table-flex-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table-title {
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
 table, th, td {
+    font-family: 'Sawarabi Mincho', sans-serif;
+    color: cornsilk;
     width: 40%;
     border: 1px solid black;
-    border-collapse: collapse;
+    border-collapse: separate !important;
+    border-radius: 3px;
+    text-align: center;
 }
 
 th {
-    background-color: lightblue;
+    background-color: darkolivegreen;
     padding: 5px;
-    text-align: left;
+    font-size: 18px;
 }
+
+table {
+    background-color: #1f2b2b;
+    font-size: 18px;
+}
+
 
 .photo-credit {
     display: none;
     font-family: 'Sawarabi Mincho', sans-serif;
     float: right;
-	/*padding-bottom: 10px;*/
-	padding-top: 110px;
+	padding-top: 210px;
 	text-align: right;
 	bottom: 0;
 	width: 100%;

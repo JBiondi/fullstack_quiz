@@ -9,27 +9,26 @@
     <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body>
+<button type="button" class="return-button" onclick="">Return to quiz selection</button>
 <h1 class="choose-h1">choose a quiz</h1>
 
+
 <div class="choice-flex-container">
-    <img src="static/img/video_game_quotes2.PNG" class='choose_quiz_img selection-vg-quotes' alt="">
-    <img src="static/img/programming_with_django.PNG" class='choose_quiz_img selection-programming' alt="">
+    <img src="static/img/video_game_quotes.png" class='choose_quiz_img selection-vg-quotes' alt="">
+    <img src="static/img/programming_with_django.png" class='choose_quiz_img selection-programming' alt="">
 </div>
 
 <h1 class="quiz-title"></h1>
 
-{#<div class="notification-flex-container">#}
-    <div class="correct-notification"></div>
-    <div class="incorrect-notification"></div>
-    <div class="user-score-notification"></div>
-{#</div>#}
+<div class="correct-notification"></div>
+<div class="incorrect-notification"></div>
+<div class="user-score-notification"></div>
 
 
 <div class="prompt-answer-container">
 </div>
 
 <div class="next-button"></div>
-{#<button type="button" class="next-button" onclick="">➳</button>#}
 
 <div class="choices-container">
     <div class="choice choiceIndex0"></div>
@@ -38,7 +37,6 @@
     <div class="choice choiceIndex3"></div>
 </div>
 
-<button type="button" class="return-button" onclick="">Return to quiz selection</button>
 
 <form class="display-name-form" method="post" >
     <h1>Enter a display name to be featured on the high score board</h1>
@@ -47,8 +45,7 @@
 <input type="submit">
 </form>
 
-<span class="photo-credit">photo by Mark Sun via unsplash</span>
-
+<div class="photo-credit">photo by Mark Sun via unsplash</div>
 
 <script src="{% static "frontend/main.js" %}"></script>
 </body>
