@@ -131,12 +131,9 @@ body {
 .highscore-page-return-button {
     font-size: 15px;
     font-family: 'Sawarabi Mincho', sans-serif;
-    border-radius: 5px;
     color: #1f2b2b;
     cursor: pointer;
-    /*make this none again v*/
     display: flex;
-    text-align: right;
 }
 
 

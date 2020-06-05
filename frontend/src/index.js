@@ -70,7 +70,7 @@ if (returnButton) {
 }
 
 if (highscoreReturnButton) {
-    highscoreReturnButton.addEventListener('click', returnToStart);
+    highscoreReturnButton.addEventListener('click', resetStats);
 }
 
 
@@ -282,6 +282,7 @@ function resetStats() {
     currentPrompt = 0;
     lengthOfQuiz = 0;
     promptsArray = [];
+    currentID = undefined;
 }
 
 
@@ -291,6 +292,7 @@ function returnToStart() {
     hideElement(displayNameForm);
     hideElement(quizTitle);
 
+    body.style.backgroundColor = 'ivory';
     showSelectionElements();
     resetStats();
 }
