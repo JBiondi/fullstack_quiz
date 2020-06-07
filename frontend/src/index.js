@@ -28,12 +28,7 @@ const nextButton = document.querySelector('.next-button');
 
 // Final elements
 const userScoreNotification = document.querySelector('.user-score-notification');
-const returnButton = document.querySelector('.return-button');
 const displayNameForm = document.querySelector('.display-name-form');
-
-// High score page elements
-const highScoreTable = document.querySelector('.high-score-table');
-const highscoreReturnButton = document.querySelector('.highscore-page-return-button');
 
 
 // Add event listeners
@@ -63,14 +58,6 @@ if (choice3) {
 
 if (nextButton) {
     nextButton.addEventListener('click', nextPrompt);
-}
-
-if (returnButton) {
-    returnButton.addEventListener('click', returnToStart);
-}
-
-if (highscoreReturnButton) {
-    highscoreReturnButton.addEventListener('click', resetStats);
 }
 
 
@@ -104,13 +91,6 @@ function showElement(element) {
 
 function showFlexElement(element) {
     element.style.display = 'flex';
-}
-
-
-function showSelectionElements() {
-    showElement(selectionVideoGameQuotes);
-    showElement(selectionProgramming);
-    showElement(chooseHeader);
 }
 
 
@@ -201,7 +181,7 @@ function getQuiz(selectedQuizID) {
             return response.json();
         })
         .then(function populateLayout (data) {
-            data.forEach(prompt => console.log(prompt));
+            // data.forEach(prompt => console.log(prompt));
             promptAnswerContainer.innerHTML = `${data[0].prompt_text}`;
             choice0.innerHTML = `${data[0].answer0}`;
             choice1.innerHTML = `${data[0].answer1}`;
@@ -253,8 +233,7 @@ function nextPrompt() {
 
 function showFinalElements() {
     showElement(userScoreNotification);
-    userScoreNotification.innerHTML = `You got ${userCorrectScore} quotes correct out of a possible ${lengthOfQuiz}`
-    showFlexElement(returnButton);
+    userScoreNotification.innerHTML = `you got ${userCorrectScore} out of ${lengthOfQuiz}!`
     showElement(displayNameForm);
 
     fetch(`http://localhost:8000/api/receive_user_score_api_endpoint/${userCorrectScore}/`, {
@@ -269,30 +248,5 @@ function showFinalElements() {
         })
         .then(function acquireRelevantID (data) {
             currentID = data
-
-            if (data) {
-                console.log(currentID)
-            }
         })
-}
-
-
-function resetStats() {
-    userCorrectScore = 0;
-    currentPrompt = 0;
-    lengthOfQuiz = 0;
-    promptsArray = [];
-    currentID = undefined;
-}
-
-
-function returnToStart() {
-    hideElement(userScoreNotification);
-    hideElement(returnButton);
-    hideElement(displayNameForm);
-    hideElement(quizTitle);
-
-    body.style.backgroundColor = 'ivory';
-    showSelectionElements();
-    resetStats();
 }

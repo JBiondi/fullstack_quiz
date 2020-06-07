@@ -101,42 +101,6 @@ body {
 }
 
 
-.return-button {
-    font-size: 15px;
-    font-family: 'Sawarabi Mincho', sans-serif;
-    border-radius: 5px;
-    color: #1f2b2b;
-    transform: scale(1);
-    cursor: pointer;
-    /*make this none again v*/
-    display: none;
-    align-items: center;
-    text-align: center;
-}
-
-
-.return-button:hover {
-    background-color: #a4ddc2;
-}
-
-
-.return-button:active {
-    transform: scale(.95);
-    transition: transform .2s;
-    border:  none;
-    border-radius: 5px;
-}
-
-
-.highscore-page-return-button {
-    font-size: 15px;
-    font-family: 'Sawarabi Mincho', sans-serif;
-    color: #1f2b2b;
-    cursor: pointer;
-    display: flex;
-}
-
-
 .choices-container {
     display: none;
     flex-direction: column;
@@ -172,22 +136,42 @@ body {
 }
 
 
-/* Display name selection page */
+.form-flex-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
-.user-score {
+
+.user-score-notification {
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 30px;
     text-align: center;
+    margin-top: 100px;
+    margin-bottom: 60px;
     display: none;
 }
 
 
 .display-name-prompt {
-    color: cornflowerblue;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 25px;
     text-align: center;
 }
 
 
 .display-name-form {
     display: none;
+    text-align: center;
+    /*padding: 10px;*/
+
+}
+
+input {
+    padding-left: 10px;
+    margin: 8px;
+    border: 1px solid black;
+    border-radius: 2px;
 }
 
 
@@ -208,7 +192,7 @@ body {
 table, th, td {
     font-family: 'Sawarabi Mincho', sans-serif;
     color: cornsilk;
-    width: 40%;
+    width: 50%;
     border: 1px solid black;
     border-collapse: separate !important;
     border-radius: 3px;

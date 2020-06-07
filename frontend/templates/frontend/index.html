@@ -10,7 +10,9 @@
 </head>
 <body>
 
-<button type="button" class="return-button" onclick="">Return to quiz selection</button>
+{#<a href="http://127.0.0.1:8000/">#}
+{#    <div class="return-button">« return to quiz selection</div>#}
+{#</a>#}
 
 <h1 class="choose-h1">choose a quiz</h1>
 
@@ -23,7 +25,7 @@
 
 <div class="correct-notification"></div>
 <div class="incorrect-notification"></div>
-<div class="user-score-notification"></div>
+
 
 
 <div class="prompt-answer-container">
@@ -38,13 +40,16 @@
     <div class="choice choiceIndex3"></div>
 </div>
 
+<div class="form-flex-container">
+    <div class="user-score-notification"></div>
+    <form class="display-name-form" method="post" >
+        {% csrf_token %}
+        {{ form }}
+    <input type="submit">
+    <p class="display-name-prompt">( enter a display name to be featured on the high score board )</p>
+    </form>
 
-<form class="display-name-form" method="post" >
-    <h1>Enter a display name to be featured on the high score board</h1>
-    {% csrf_token %}
-    {{ form }}
-<input type="submit">
-</form>
+</div>
 
 <div class="photo-credit">photo by Mark Sun via unsplash</div>
 
