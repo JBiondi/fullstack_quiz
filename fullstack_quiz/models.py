@@ -31,7 +31,7 @@ class Prompt(models.Model):
 class HighScore(models.Model):
     high_score_id = models.AutoField(primary_key=True)
     associated_quiz_id = models.IntegerField(default=-1)
-    display_name = models.CharField(default='anonymous', max_length=21)
+    display_name = models.CharField(default='anonymous', max_length=18)
     user_correct_score = models.IntegerField(default=-1)
 
     def __str__(self):

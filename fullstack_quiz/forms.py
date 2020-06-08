@@ -7,3 +7,6 @@ class DisplayNameForm(forms.ModelForm):
     class Meta:
         model = HighScore
         fields = ['display_name']
+        labels = {
+            'display_name': ''
+        }

@@ -51,8 +51,6 @@ body {
     font-family: 'Sawarabi Mincho', sans-serif;
     color: #1f2b2b;
     text-align: center;
-    margin-top: 150px;
-    margin-bottom: 40px;
     display: none;
 }
 
@@ -61,7 +59,6 @@ body {
     font-size: 45px;
     font-family: serif;
     text-align: center;
-    align-items: center;
     width: 500px;
     margin: auto;
     margin-top: 75px;
@@ -104,7 +101,7 @@ body {
 .choices-container {
     display: none;
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 
@@ -124,7 +121,6 @@ body {
 
 
 .choice:hover {
-    background-color: silver;
     transform: scale(.95);
     transition: transform .2s;
 }
@@ -147,31 +143,36 @@ body {
     font-family: 'Sawarabi Mincho', sans-serif;
     font-size: 30px;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 60px;
+    margin-top: 110px;
+    margin-bottom: 50px;
     display: none;
 }
 
 
 .display-name-prompt {
     font-family: 'Sawarabi Mincho', sans-serif;
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
 }
 
 
 .display-name-form {
+    font-family: 'Sawarabi Mincho', sans-serif;
     display: none;
     text-align: center;
-    /*padding: 10px;*/
-
 }
 
+
 input {
-    padding-left: 10px;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    font-size: 18px;
     margin: 8px;
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 
@@ -189,6 +190,7 @@ input {
     margin-bottom: 40px;
 }
 
+
 table, th, td {
     font-family: 'Sawarabi Mincho', sans-serif;
     color: cornsilk;
@@ -199,11 +201,13 @@ table, th, td {
     text-align: center;
 }
 
+
 th {
     background-color: darkolivegreen;
     padding: 5px;
     font-size: 18px;
 }
+
 
 table {
     background-color: #1f2b2b;
@@ -212,12 +216,13 @@ table {
 
 
 .photo-credit {
+    position: absolute;
     display: none;
     font-family: 'Sawarabi Mincho', sans-serif;
-    float: right;
-	padding-top: 210px;
 	text-align: right;
-	bottom: 0;
-	width: 100%;
-    color: silver;
+	bottom: 2px;
+	width: 96%;
+    padding-left: 45px;
+    padding-bottom: 10px;
+    color: darkgray;
 }

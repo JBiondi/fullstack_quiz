@@ -29,6 +29,7 @@ const nextButton = document.querySelector('.next-button');
 // Final elements
 const userScoreNotification = document.querySelector('.user-score-notification');
 const displayNameForm = document.querySelector('.display-name-form');
+const displayNamePrompt = document.querySelector('.display-name-prompt');
 
 
 // Add event listeners
@@ -126,7 +127,7 @@ function applyVideoGameQuizStyling() {
 
 function applyDjangoQuizStyling() {
     promptAnswerContainer.style.fontFamily = 'Cute Font, cursive';
-    promptAnswerContainer.style.color = 'ivory'
+    promptAnswerContainer.style.color = 'white'
     body.style.backgroundImage = "url('static/img/django_quiz_background.png')";
     promptAnswerContainer.style.fontSize = '58px';
     correctNotification.innerHTML = '⌨  CORRECT  ⌨';
@@ -146,6 +147,9 @@ function applyDjangoQuizStyling() {
     nextButton.style.fontWeight = 'bold';
     nextButton.innerHTML = '>>>';
     showElement(photoCredit);
+    userScoreNotification.style.color = 'ivory';
+    displayNamePrompt.style.color = 'ivory';
+    displayNameForm.style.color = 'ivory';
 }
 
 
