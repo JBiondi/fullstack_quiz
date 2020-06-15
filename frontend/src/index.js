@@ -111,7 +111,19 @@ function showPromptElements() {
 function applyVideoGameQuizStyling() {
     promptAnswerContainer.style.fontFamily = 'IM Fell English';
     promptAnswerContainer.style.color = 'brown';
-    body.style.backgroundImage = "url('static/img/video_game_quotes_quiz_background.png')";
+
+    if (screen.width > 580) {
+        body.style.backgroundImage = "url('static/img/video_game_quotes_quiz_background.png')";
+    }
+
+    if (screen.width < 580) {
+        promptAnswerContainer.style.width = '300px';
+        promptAnswerContainer.style.fontSize = '38px';
+        promptAnswerContainer.style.marginTop = '15px';
+        quizTitle.style.fontSize = '20px';
+    }
+
+    promptAnswerContainer.style.fontSize = '45px';
     correctNotification.innerHTML = '⌖  CORRECT  ⌖';
     incorrectNotification.innerHTML = '⌖  INCORRECT  ⌖';
     quizTitle.innerHTML = ' - video game quotes quiz - ';
@@ -128,7 +140,21 @@ function applyVideoGameQuizStyling() {
 function applyDjangoQuizStyling() {
     promptAnswerContainer.style.fontFamily = 'Cute Font, cursive';
     promptAnswerContainer.style.color = 'white'
-    body.style.backgroundImage = "url('static/img/django_quiz_background.png')";
+
+    if (screen.width > 580) {
+        body.style.backgroundImage = "url('static/img/django_quiz_background.png')";
+        showElement(photoCredit);
+    }
+
+    body.style.backgroundColor = 'black';
+
+    if (screen.width < 580) {
+        promptAnswerContainer.style.width = '300px';
+        promptAnswerContainer.style.fontSize = '38px';
+        promptAnswerContainer.style.marginTop = '15px';
+        quizTitle.style.fontSize = '20px';
+    }
+
     promptAnswerContainer.style.fontSize = '58px';
     correctNotification.innerHTML = '⌨  CORRECT  ⌨';
     correctNotification.style.color = 'ivory';
@@ -146,7 +172,7 @@ function applyDjangoQuizStyling() {
     nextButton.style.color = 'ivory';
     nextButton.style.fontWeight = 'bold';
     nextButton.innerHTML = '>>>';
-    showElement(photoCredit);
+
     userScoreNotification.style.color = 'ivory';
     displayNamePrompt.style.color = 'ivory';
     displayNameForm.style.color = 'ivory';
