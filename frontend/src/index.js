@@ -19,7 +19,6 @@ const choice0 = document.querySelector('.choiceIndex0');
 const choice1 = document.querySelector('.choiceIndex1');
 const choice2 = document.querySelector('.choiceIndex2');
 const choice3 = document.querySelector('.choiceIndex3');
-const photoCredit = document.querySelector('.photo-credit');
 
 // Answer elements
 const correctNotification = document.querySelector('.correct-notification');
@@ -108,79 +107,12 @@ function showPromptElements() {
 }
 
 
-function applyVideoGameQuizStyling() {
-    promptAnswerContainer.style.fontFamily = 'IM Fell English';
-    promptAnswerContainer.style.color = 'brown';
-
-    if (screen.width > 580) {
-        body.style.backgroundImage = "url('static/img/video_game_quotes_quiz_background.png')";
-    }
-
-    if (screen.width < 580) {
-        promptAnswerContainer.style.width = '300px';
-        promptAnswerContainer.style.fontSize = '38px';
-        promptAnswerContainer.style.marginTop = '15px';
-        quizTitle.style.fontSize = '20px';
-    }
-
-    promptAnswerContainer.style.fontSize = '45px';
+function userSelectedVGQuotesQuiz() {
+    body.className = 'vg-quotes';
+    quizTitle.innerHTML = ' - video game quotes quiz - ';
     correctNotification.innerHTML = '⌖  CORRECT  ⌖';
     incorrectNotification.innerHTML = '⌖  INCORRECT  ⌖';
-    quizTitle.innerHTML = ' - video game quotes quiz - ';
-    quizTitle.style.color = '#1f2b2b';
-    allChoices.forEach(function (choice) {
-        choice.style.backgroundColor = 'lightslategrey';
-    })
     nextButton.innerHTML = '➳';
-    nextButton.style.color = '#1f2b2b'
-    nextButton.style.paddingLeft = '32px';
-}
-
-
-function applyDjangoQuizStyling() {
-    promptAnswerContainer.style.fontFamily = 'Cute Font, cursive';
-    promptAnswerContainer.style.color = 'white'
-
-    if (screen.width > 580) {
-        body.style.backgroundImage = "url('static/img/django_quiz_background.png')";
-        showElement(photoCredit);
-    }
-
-    body.style.backgroundColor = 'black';
-
-    if (screen.width < 580) {
-        promptAnswerContainer.style.width = '300px';
-        promptAnswerContainer.style.fontSize = '38px';
-        promptAnswerContainer.style.marginTop = '15px';
-        quizTitle.style.fontSize = '20px';
-    }
-
-    promptAnswerContainer.style.fontSize = '58px';
-    correctNotification.innerHTML = '⌨  CORRECT  ⌨';
-    correctNotification.style.color = 'ivory';
-    incorrectNotification.innerHTML = '⌨  INCORRECT  ⌨';
-    incorrectNotification.style.color = 'ivory';
-    quizTitle.innerHTML = '- programming with django quiz -';
-    quizTitle.style.color = 'cornsilk'
-    allChoices.forEach(function (choice) {
-        choice.style.backgroundColor = 'cornsilk';
-        choice.style.color = '#1f2b2b'
-    })
-    nextButton.style.paddingLeft = '0px';
-    nextButton.style.paddingRight = '10px';
-    nextButton.style.fontSize = '75px';
-    nextButton.style.color = 'ivory';
-    nextButton.style.fontWeight = 'bold';
-    nextButton.innerHTML = '>>>';
-
-    userScoreNotification.style.color = 'ivory';
-    displayNamePrompt.style.color = 'ivory';
-    displayNameForm.style.color = 'ivory';
-}
-
-
-function userSelectedVGQuotesQuiz() {
-    applyVideoGameQuizStyling();
 
     const quizID = 1;
     getQuiz(quizID);
@@ -188,7 +120,11 @@ function userSelectedVGQuotesQuiz() {
 
 
 function userSelectedDjangoQuiz() {
-    applyDjangoQuizStyling();
+    body.className = 'django-prog';
+    quizTitle.innerHTML = '- programming with django quiz -';
+    correctNotification.innerHTML = '⌨  CORRECT  ⌨';
+    incorrectNotification.innerHTML = '⌨  INCORRECT  ⌨';
+    nextButton.innerHTML = '>>>';
 
     const quizID = 2;
     getQuiz(quizID);
@@ -211,7 +147,6 @@ function getQuiz(selectedQuizID) {
             return response.json();
         })
         .then(function populateLayout (data) {
-            // data.forEach(prompt => console.log(prompt));
             promptAnswerContainer.innerHTML = `${data[0].prompt_text}`;
             choice0.innerHTML = `${data[0].answer0}`;
             choice1.innerHTML = `${data[0].answer1}`;

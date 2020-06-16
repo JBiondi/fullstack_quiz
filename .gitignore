@@ -6,7 +6,8 @@ __pycache__
 db.sqlite3
 media
 
-frontend/static/img
+/frontend/static/img
+/frontend/static/css/background_images
 
 
 # PyCharm #

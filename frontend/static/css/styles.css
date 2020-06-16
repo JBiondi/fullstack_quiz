@@ -69,6 +69,7 @@ body {
 }
 
 
+
 .next-button {
     font-size: 90px;
     font-family: 'Sawarabi Mincho', sans-serif;
@@ -182,6 +183,7 @@ input {
     flex-direction: column;
 }
 
+
 .table-title {
     font-family: 'Sawarabi Mincho', sans-serif;
     font-size: 25px;
@@ -216,14 +218,164 @@ table {
 
 
 .photo-credit {
-    position: absolute;
     display: none;
+}
+
+
+/* Video game quotes quiz styling - default sizing */
+body.vg-quotes {
+    background-image: url('background_images/video_game_quotes_quiz_background.png');
+}
+
+
+body.vg-quotes .quiz-title {
+    color: #1f2b2b;
+}
+
+
+body.vg-quotes .prompt-answer-container {
+    font-family: 'IM Fell English', serif;
+    font-size: 45px;
+    color: brown;
+}
+
+body.vg-quotes .choice {
+    background-color: lightslategrey;
+}
+
+body.vg-quotes .next-button {
+    color: #1f2b2b;
+    padding-left: 32px;
+}
+
+body.vg-quotes .user-score-notification {
+    color: #1f2b2b;
+}
+
+body.vg-quotes .display-name-prompt {
+    color: #1f2b2b;
+}
+
+
+/* Django programming quiz styling - default sizing */
+body.django-prog {
+    background-image: url('background_images/django_quiz_background.png');
+}
+
+
+body.django-prog .quiz-title {
+    color: cornsilk;
+}
+
+
+body.django-prog .prompt-answer-container {
+    font-family: 'Cute Font', cursive;
+    font-size: 55px;
+    color: white;
+}
+
+
+body.django-prog .choice {
+    background-color: cornsilk;
+    color: #1f2b2b;
+}
+
+body.django-prog .correct-notification {
+    color: ivory;
+}
+
+body.django-prog .incorrect-notification {
+    color: ivory;
+}
+
+body.django-prog .next-button {
+    padding-left: 0px;
+    padding-right: 10px;
+    font-size: 65px;
+    color: ivory;
+    font-weight: bold;
+}
+
+body.django-prog .photo-credit {
+    position: absolute;
     font-family: 'Sawarabi Mincho', sans-serif;
 	text-align: right;
 	bottom: 2px;
-	width: 94%;
-    padding-left: 45px;
+	width: 92%;
     padding-bottom: 10px;
     color: darkgray;
+    display: block;
 }
+
+body.django-prog .user-score-notification {
+    color: ivory;
+}
+
+body.django-prog .display-name-prompt {
+    color: ivory;
+}
+
+
+/* small screens */
+@media screen and (max-width: 580px) {
+
+    body .quiz-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    body .choices-container {
+        margin-top: 20px;
+    }
+
+    body .table-title {
+        font-size: 18px;
+    }
+
+    body .user-score-notification {
+        font-size: 20px;
+    }
+
+    body .display-name-prompt {
+        font-size: 20px;
+    }
+
+    /*VG specific*/
+
+    body.vg-quotes {
+        background-image: none;
+        background-color: ivory;
+    }
+
+    body.vg-quotes .prompt-answer-container {
+        width: 300px;
+        font-size: 38px;
+        margin-top: 20px;
+    }
+
+    /*Django specific*/
+
+    body.django-prog {
+        background-color: black;
+        background-image: none;
+    }
+
+    body.django-prog .prompt-answer-container {
+        width: 300px;
+        font-size: 44px;
+        margin-top: 20px;
+    }
+
+    body.django-prog .next-button {
+        font-size: 45px;
+        padding-right: 0;
+        padding-left: 20px;
+    }
+
+    body.django-prog .photo-credit {
+        display: none;
+    }
+
+}
+
 
