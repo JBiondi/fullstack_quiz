@@ -387,3 +387,20 @@ body.django-prog .display-name-prompt {
 }
 
 
+/*super huge screens*/
+@media screen and (min-width: 4000px) {
+
+    body.vg-quotes {
+        background-image: none;
+        background-color: ivory;
+    }
+
+    body.django-prog {
+        background-color: black;
+        background-image: none;
+    }
+
+    body.django-prog .photo-credit {
+        display: none;
+    }
+}
