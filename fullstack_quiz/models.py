@@ -9,8 +9,8 @@ class Quiz(models.Model):
         return self.quiz_topic
 
     def get_quiz_length(self, quiz_id):
-        prompts_qs = Prompt.objects.filter(associated_quiz_id_id=quiz_id)
-        return len(list(prompts_qs))
+        prompts_queryset = Prompt.objects.filter(associated_quiz_id_id=quiz_id)
+        return len(list(prompts_queryset))
 
 
 class Prompt(models.Model):

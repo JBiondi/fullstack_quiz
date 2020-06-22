@@ -6,8 +6,8 @@ let currentID;
 
 // Selection screen elements
 const chooseHeader = document.querySelector('.choose-h1');
-const selectionVideoGameQuotes = document.querySelector('.selection-vg-quotes');
-const selectionProgramming = document.querySelector('.selection-programming');
+const selectionVideoGameQuotes = document.querySelector('.selection-option-vg-quotes');
+const selectionProgramming = document.querySelector('.selection-option-programming');
 
 // Quiz screen elements
 const body = document.body;
@@ -59,21 +59,12 @@ if (nextButton) {
 
 
 function getCookie(name) {
-    if (!document.cookie) {
-      return null;
-    }
     const token = document.cookie.split(';')
       .map(c => c.trim())
       .filter(c => c.startsWith(name + '='));
 
-    if (token.length === 0) {
-      return null;
-    }
     return decodeURIComponent(token[0].split('=')[1]);
-  }
-
-
-// let csrftoken = getCookie('csrftoken');
+}
 
 
 function hideElement(element) {

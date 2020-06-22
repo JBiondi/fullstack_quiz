@@ -28,6 +28,6 @@ def receive_user_score_view(request, user_correct_score=None):
 
         current_attempt_id = current_attempt.high_score_id
         request.session['current ID'] = current_attempt_id
-        json_current_user_id = json.dumps(current_attempt_id)
+        json_current_attempt_id = json.dumps(current_attempt_id)
 
-        return HttpResponse(json_current_user_id, content_type='application/json')
+        return HttpResponse(json_current_attempt_id, content_type='application/json')
