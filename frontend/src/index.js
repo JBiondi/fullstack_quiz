@@ -14,7 +14,6 @@ const body = document.body;
 const promptAnswerContainer = document.querySelector('.prompt-answer-container');
 const quizTitle = document.querySelector('.quiz-title');
 const choicesContainer = document.querySelector('.choices-container');
-const allChoices = document.querySelectorAll('.choice');
 const choice0 = document.querySelector('.choiceIndex0');
 const choice1 = document.querySelector('.choiceIndex1');
 const choice2 = document.querySelector('.choiceIndex2');
@@ -28,8 +27,6 @@ const nextButton = document.querySelector('.next-button');
 // Final elements
 const userScoreNotification = document.querySelector('.user-score-notification');
 const displayNameForm = document.querySelector('.display-name-form');
-const displayNamePrompt = document.querySelector('.display-name-prompt');
-
 
 // Add event listeners
 if (selectionVideoGameQuotes) {
@@ -76,7 +73,7 @@ function getCookie(name) {
   }
 
 
-const csrftoken = getCookie('csrftoken');
+// let csrftoken = getCookie('csrftoken');
 
 
 function hideElement(element) {
@@ -132,7 +129,7 @@ function userSelectedDjangoQuiz() {
 
 
 function getQuiz(selectedQuizID) {
-
+    const csrftoken = getCookie('csrftoken');
     hideSelectionElements();
     showPromptElements();
 
@@ -141,7 +138,7 @@ function getQuiz(selectedQuizID) {
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrftoken,
-        },
+        }
     })
         .then(response => {
             return response.json();
@@ -197,6 +194,7 @@ function nextPrompt() {
 
 
 function showFinalElements() {
+    const csrftoken = getCookie('csrftoken');
     showElement(userScoreNotification);
     userScoreNotification.innerHTML = `you got ${userCorrectScore} out of ${lengthOfQuiz}!`
     showElement(displayNameForm);
@@ -206,7 +204,7 @@ function showFinalElements() {
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrftoken,
-        },
+        }
     })
         .then(response => {
             return response.json();
