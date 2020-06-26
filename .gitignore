@@ -56,9 +56,11 @@ pip-delete-this-directory.txt
 
 .venv
 venv/
+/.env
 
 # mypy
 .mypy_cache/
 
 # node
 node_modules
+
