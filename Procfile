@@ -1,1 +1,1 @@
-web: gunicorn fullstack_quiz_project/fullstack_quiz_project.wsgi
+web: gunicorn fullstack_quiz_project.wsgi
