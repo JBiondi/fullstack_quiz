@@ -124,7 +124,7 @@ function getQuiz(selectedQuizID) {
     hideSelectionElements();
     showPromptElements();
 
-    fetch(`https://fullstack-quiz-website.herokuapp.com//api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
+    fetch(`https://fullstack-quiz-website.herokuapp.com/api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
