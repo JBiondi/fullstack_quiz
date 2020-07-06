@@ -339,7 +339,7 @@ body.django-prog .display-name-prompt {
     }
 
     body .table-title {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     body .user-score-notification {
@@ -351,11 +351,12 @@ body.django-prog .display-name-prompt {
     }
 
     table, th, td {
-        width: 80%;
+        width: 70%;
     }
 
     body .return-link {
         text-align: center;
+        justify-content: center;
         padding-left: 0;
     }
 
