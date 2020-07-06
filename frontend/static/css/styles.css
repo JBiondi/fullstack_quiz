@@ -350,6 +350,10 @@ body.django-prog .display-name-prompt {
         font-size: 20px;
     }
 
+    table, th, td {
+        width: 70%;
+    }
+
     /*VG specific*/
 
     body.vg-quotes {
@@ -404,5 +408,9 @@ body.django-prog .display-name-prompt {
 
     body.django-prog .photo-credit {
         display: none;
+    }
+
+    table, th, td {
+        width: 30%
     }
 }
