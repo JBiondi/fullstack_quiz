@@ -24,8 +24,8 @@ body {
 
 
 .choose_quiz_img {
-    max-width: 250px;
-    max-height: 250px;
+    width: 250px;
+    height: 250px;
     border: darkslategray solid 1px;
     border-radius: 10px;
     margin: 10px;
