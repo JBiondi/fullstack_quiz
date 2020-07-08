@@ -230,7 +230,7 @@ table {
 
 /* Video game quotes quiz styling - default sizing */
 body.vg-quotes {
-    background-image: url('background_images/compressed_vg_background.png');
+    background-image: url('background_images/compressed_vg_quotes_background.png');
 }
 
 
@@ -267,7 +267,7 @@ body.vg-quotes .display-name-prompt {
 
 /* Django programming quiz styling - default sizing */
 body.django-prog {
-    background-image: url('background_images/django_quiz_background.png');
+    background-image: url('background_images/compressed_django_quiz_background.png');
 }
 
 
