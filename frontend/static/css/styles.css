@@ -69,7 +69,6 @@ body {
 }
 
 
-
 .next-button {
     font-size: 90px;
     font-family: 'Sawarabi Mincho', sans-serif;
@@ -81,7 +80,6 @@ body {
     cursor: pointer;
     display: none;
     align-items: center;
-
 }
 
 
@@ -255,7 +253,7 @@ body.vg-quotes .choice {
 
 body.vg-quotes .next-button {
     color: #1f2b2b;
-    padding-left: 32px;
+    padding-left: 29px;
 }
 
 body.vg-quotes .user-score-notification {
@@ -371,6 +369,10 @@ body.django-prog .display-name-prompt {
         width: 300px;
         font-size: 38px;
         margin-top: 20px;
+    }
+
+    body.vg-quotes .next-button {
+        padding-left: 25px;
     }
 
     /*Django specific*/
