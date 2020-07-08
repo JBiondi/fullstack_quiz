@@ -299,7 +299,7 @@ body.django-prog .incorrect-notification {
 }
 
 body.django-prog .next-button {
-    padding-left: 0px;
+    padding-left: 20px;
     padding-right: 10px;
     font-size: 65px;
     color: ivory;
@@ -389,7 +389,7 @@ body.django-prog .display-name-prompt {
     body.django-prog .next-button {
         font-size: 45px;
         padding-right: 0;
-        padding-left: 20px;
+        padding-left: 30px;
     }
 
     body.django-prog .photo-credit {
