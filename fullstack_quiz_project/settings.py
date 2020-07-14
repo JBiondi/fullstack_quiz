@@ -98,6 +98,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:8000',
     'https://fullstack-quiz-website.herokuapp.com',
     'https://cozyquiz.com',
+    'cozyquiz.com'
 ]
 
 # Database
