@@ -30,7 +30,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG_VALUE')
 
 ALLOWED_HOSTS = ['fullstack-quiz-website.herokuapp.com',
-                 'www.cozyquiz.com',
                  'cozyquiz.com']
 
 # Application definition
