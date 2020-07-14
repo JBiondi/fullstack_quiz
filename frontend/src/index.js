@@ -124,7 +124,7 @@ function getQuiz(selectedQuizID) {
     hideSelectionElements();
     showPromptElements();
 
-    fetch(`https://fullstack-quiz-website.herokuapp.com/api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
+    fetch(`https://cozyquiz.com/api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -190,7 +190,7 @@ function showFinalElements() {
     userScoreNotification.innerHTML = `you got ${userCorrectScore} out of ${lengthOfQuiz}!`
     showElement(displayNameForm);
 
-    fetch(`https://fullstack-quiz-website.herokuapp.com/api/receive_user_score_api_endpoint/${userCorrectScore}/`, {
+    fetch(`https://cozyquiz.com/api/receive_user_score_api_endpoint/${userCorrectScore}/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
