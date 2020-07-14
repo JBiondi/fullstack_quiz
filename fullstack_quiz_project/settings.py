@@ -94,12 +94,11 @@ WSGI_APPLICATION = 'fullstack_quiz_project.wsgi.application'
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:8000',
-    'http://127.0.0.1:8000',
-    'https://fullstack-quiz-website.herokuapp.com',
     'https://cozyquiz.com',
     'cozyquiz.com'
 ]
+
+CSRF_TRUSTED_ORIGINS = ['cozyquiz.com']
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
