@@ -185,7 +185,7 @@ function nextPrompt() {
 
 
 function showFinalElements() {
-    const csrftoken = getCookie('csrftoken');
+    // const csrftoken = getCookie('csrftoken');
     showElement(userScoreNotification);
     userScoreNotification.innerHTML = `you got ${userCorrectScore} out of ${lengthOfQuiz}!`
     showElement(displayNameForm);
@@ -194,7 +194,7 @@ function showFinalElements() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'X-CSRFToken': csrftoken,
+            // 'X-CSRFToken': csrftoken,
         }
     })
         .then(response => {
