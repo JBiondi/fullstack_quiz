@@ -195,6 +195,9 @@ function showFinalElements() {
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrftoken,
+        },
+        data: {
+            'csrfmiddlewaretoken': csrftoken
         }
     })
         .then(response => {
