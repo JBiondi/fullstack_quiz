@@ -101,6 +101,8 @@ CSRF_TRUSTED_ORIGINS = ['cozyquiz.com',
                         '.fullstack-quiz-website.herokuapp.com',
                         ]
 
+CSRF_COOKIE_SECURE = True
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
