@@ -39,7 +39,7 @@
 <div class="form-flex-container">
     <div class="user-score-notification"></div>
     <form class="display-name-form" method="post" >
-        {% csrf_token %}
+        {{ csrf_token }}
         {{ form }}
     <input type="submit">
     <p class="display-name-prompt"> enter a display name to be featured on the high score board </p>
