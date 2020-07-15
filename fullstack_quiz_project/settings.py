@@ -28,8 +28,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG_VALUE')
 
-ALLOWED_HOSTS = ['fullstack-quiz-website.herokuapp.com',
-                 'cozyquiz.com']
+ALLOWED_HOSTS = ['cozyquiz.com',
+                 'fullstack-quiz-website.herokuapp.com',]
 
 # Application definition
 
@@ -91,11 +91,14 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = [
     'https://cozyquiz.com',
-    'cozyquiz.com'
+    'cozyquiz.com',
+    'fullstack-quiz-website.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = ['cozyquiz.com',
+                        '.cozyquiz.com',
                         'fullstack-quiz-website.herokuapp.com',
+                        '.fullstack-quiz-website.herokuapp.com',
                         ]
 
 # Database
