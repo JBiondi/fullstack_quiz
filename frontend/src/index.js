@@ -66,6 +66,7 @@ function getCookie(name) {
     return decodeURIComponent(token[0].split('=')[1]);
 }
 
+const csrftoken = getCookie('csrftoken');
 
 function hideElement(element) {
     element.style.display = 'none';
@@ -120,11 +121,11 @@ function userSelectedDjangoQuiz() {
 
 
 function getQuiz(selectedQuizID) {
-    const csrftoken = getCookie('csrftoken');
+
     hideSelectionElements();
     showPromptElements();
 
-    fetch(`http://cozyquiz.com/api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
+    fetch(`https://cozyquiz.com/api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -185,12 +186,11 @@ function nextPrompt() {
 
 
 function showFinalElements() {
-    const csrftoken = getCookie('csrftoken');
     showElement(userScoreNotification);
     userScoreNotification.innerHTML = `you got ${userCorrectScore} out of ${lengthOfQuiz}!`
     showElement(displayNameForm);
 
-    fetch(`http://cozyquiz.com/api/receive_user_score_api_endpoint/${userCorrectScore}/`, {
+    fetch(`https://cozyquiz.com/api/receive_user_score_api_endpoint/${userCorrectScore}/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
