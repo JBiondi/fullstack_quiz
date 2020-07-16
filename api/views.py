@@ -16,7 +16,7 @@ def quiz_selection_handler_view(request, selected_quiz_id=None):
 
     json_prompts = json.dumps(prompts_array)
 
-    request.session['current quiz id'] = selected_quiz_id
+    request.session['current quiz ID'] = selected_quiz_id
 
     return HttpResponse(json_prompts, content_type='application/json')
 
