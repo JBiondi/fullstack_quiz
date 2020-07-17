@@ -69,6 +69,8 @@ SECURE_SSL_REDIRECT = True
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
+SESSION_COOKIE_DOMAIN = 'cozyquiz.com'
+
 ROOT_URLCONF = 'fullstack_quiz_project.urls'
 
 TEMPLATES = [
@@ -94,8 +96,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = [
     'https://cozyquiz.com',
-    'cozyquiz.com',
-    'fullstack-quiz-website.herokuapp.com'
+    'https://fullstack-quiz-website.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = ['cozyquiz.com',
