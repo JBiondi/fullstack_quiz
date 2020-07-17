@@ -23,12 +23,10 @@ def quiz_selection_handler_view(request, selected_quiz_id=None):
 
 
 @csrf_exempt
-def receive_user_score_view(request, user_correct_score=None):
+def receive_user_score_view(request, user_correct_score=None, quiz_id=None):
     if request.method == 'POST':
 
-        print(f'session dict: {request.session.items()}')
-
-        current_quiz = request.session['current quiz ID']
+        current_quiz = quiz_id
         current_attempt = HighScore(user_correct_score=user_correct_score, associated_quiz_id=current_quiz)
         current_attempt.save()
 

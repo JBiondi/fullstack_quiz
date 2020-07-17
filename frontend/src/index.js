@@ -28,6 +28,8 @@ const nextButton = document.querySelector('.next-button');
 const userScoreNotification = document.querySelector('.user-score-notification');
 const displayNameForm = document.querySelector('.display-name-form');
 
+let quizID = 0;
+
 // Add event listeners
 if (selectionVideoGameQuotes) {
     selectionVideoGameQuotes.addEventListener('click', userSelectedVGQuotesQuiz);
@@ -103,7 +105,7 @@ function userSelectedVGQuotesQuiz() {
     incorrectNotification.innerHTML = '⌖  INCORRECT  ⌖';
     nextButton.innerHTML = '➳';
 
-    const quizID = 1;
+    quizID = 1;
     getQuiz(quizID);
 }
 
@@ -115,7 +117,7 @@ function userSelectedDjangoQuiz() {
     incorrectNotification.innerHTML = '⌨  INCORRECT  ⌨';
     nextButton.innerHTML = '>>>';
 
-    const quizID = 2;
+    quizID = 2;
     getQuiz(quizID);
 }
 
@@ -190,7 +192,7 @@ function showFinalElements() {
     userScoreNotification.innerHTML = `you got ${userCorrectScore} out of ${lengthOfQuiz}!`
     showElement(displayNameForm);
 
-    fetch(`https://cozyquiz.com/api/receive_user_score_api_endpoint/${userCorrectScore}/`, {
+    fetch(`https://cozyquiz.com/api/receive_user_score_api_endpoint/${userCorrectScore}/${quizID}/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
