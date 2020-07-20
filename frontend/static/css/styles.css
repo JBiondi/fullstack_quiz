@@ -242,7 +242,7 @@ body.vg-quotes {
 }
 
 body.vg-quotes .index-return-link {
-    color: #1f2b2b;
+    color: ivory;
 }
 
 body.vg-quotes .quiz-title {
@@ -281,7 +281,7 @@ body.django-prog {
     background-image: url('background_images/django_quiz_background.png');
 }
 
-body.vg-quotes .index-return-link {
+body.django-prog .index-return-link {
     color: ivory;
 }
 
