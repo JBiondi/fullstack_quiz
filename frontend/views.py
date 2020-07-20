@@ -6,9 +6,7 @@ from fullstack_quiz.models import HighScore
 def frontend_home_view(request):
     if request.method == 'POST':
 
-        # current_attempt = HighScore.objects.get(pk=request.session['current attempt ID'])
         current_attempt = HighScore.objects.order_by('-high_score_id').first()
-        print(f'my cool current_attempt: {current_attempt}')
         current_quiz = current_attempt.associated_quiz_id
 
         form = DisplayNameForm(request.POST, instance=current_attempt)
