@@ -227,6 +227,15 @@ table {
     margin-bottom: 80px;
 }
 
+.index-return-link {
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 18px;
+    color: #1f2b2b;
+    padding-left: 10px;
+    margin-bottom: 80px;
+    display: none;
+}
+
 
 /* Video game quotes quiz styling - default sizing */
 body.vg-quotes {

@@ -27,6 +27,7 @@ const nextButton = document.querySelector('.next-button');
 // Final elements
 const userScoreNotification = document.querySelector('.user-score-notification');
 const displayNameForm = document.querySelector('.display-name-form');
+const returnLink = document.querySelector('.return-link');
 
 let quizID = 0;
 
@@ -126,6 +127,7 @@ function getQuiz(selectedQuizID) {
 
     hideSelectionElements();
     showPromptElements();
+    showElement(returnLink);
 
     fetch(`https://cozyquiz.com/api/quiz_selection_api_endpoint/${selectedQuizID}/`, {
         method: 'GET',
