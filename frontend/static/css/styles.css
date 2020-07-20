@@ -230,7 +230,6 @@ table {
 .index-return-link {
     font-family: 'Sawarabi Mincho', sans-serif;
     font-size: 18px;
-    color: #1f2b2b;
     padding-left: 10px;
     margin-bottom: 80px;
     display: none;
@@ -242,6 +241,9 @@ body.vg-quotes {
     background-image: url('background_images/vg_quotes_quiz_background.png');
 }
 
+body.vg-quotes .index-return-link {
+    color: #1f2b2b;
+}
 
 body.vg-quotes .quiz-title {
     color: #1f2b2b;
@@ -279,6 +281,9 @@ body.django-prog {
     background-image: url('background_images/django_quiz_background.png');
 }
 
+body.vg-quotes .index-return-link {
+    color: ivory;
+}
 
 body.django-prog .quiz-title {
     color: cornsilk;
