@@ -282,7 +282,7 @@ body.django-prog {
 }
 
 body.django-prog .index-return-link {
-    color: cornsilk;
+    color: #689e70;
 }
 
 body.django-prog .quiz-title {
@@ -383,6 +383,13 @@ body.django-prog .display-name-prompt {
         background-color: ivory;
     }
 
+    body.vg-quotes .index-return-link {
+        color: #1f2b2b;
+        text-align: center;
+        justify-content: center;
+        padding-left: 0;
+    }
+
     body.vg-quotes .prompt-answer-container {
         width: 300px;
         font-size: 38px;
@@ -398,6 +405,13 @@ body.django-prog .display-name-prompt {
     body.django-prog {
         background-color: black;
         background-image: none;
+    }
+
+    body.django-prog .index-return-link {
+        color: #689e70;
+        text-align: center;
+        justify-content: center;
+        padding-left: 0;
     }
 
     body.django-prog .prompt-answer-container {
@@ -438,5 +452,11 @@ body.django-prog .display-name-prompt {
 
     table, th, td {
         width: 30%
+    }
+
+    /*VG specific*/
+
+    body.vg-quotes .index-return-link {
+        color: #1f2b2b;
     }
 }
