@@ -64,7 +64,7 @@ if (nextButton) {
 function getCookie(flavor) {
     const cookieList = document.cookie.split(';');
     const trimmedCookies = cookieList.map(cookie => cookie.trim);
-    const matchedCookie = trimmedCookies.find(ck => ck.startsWith(flavor + '='));
+    const matchedCookie = trimmedCookies.filter(ck => ck.startsWith(flavor + '='));
     const cookieParts = matchedCookie.split('=')
 
     return cookieParts[1];
