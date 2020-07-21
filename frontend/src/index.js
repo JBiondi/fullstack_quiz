@@ -61,15 +61,17 @@ if (nextButton) {
 }
 
 
-function getCookie(name) {
-    const token = document.cookie.split(';')
-      .map(c => c.trim())
-      .filter(c => c.startsWith(name + '='));
+function getCookie(flavor) {
+    const cookieList = document.cookie.split(';');
+    const trimmedCookies = cookieList.map(cookie => cookie.trim);
+    const matchedCookie = trimmedCookies.find(cookie => cookie.startsWith(flavor + '='));
+    const cookieParts = matchedCookie.split('=')
 
-    return decodeURIComponent(token[0].split('=')[1]);
+    return cookieParts[1];
 }
 
 const csrftoken = getCookie('csrftoken');
+
 
 function hideElement(element) {
     element.style.display = 'none';
