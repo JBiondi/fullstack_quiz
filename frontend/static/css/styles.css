@@ -433,7 +433,7 @@ body.django-prog .display-name-prompt {
 
 /*laptops*/
 
-@media only screen and (max-width: 1275px) and (min-width: 775px) {
+@media only screen and (max-width: 1300px) and (min-width: 775px) {
 
     /*Django quiz*/
     body.django-prog .quiz-title {
