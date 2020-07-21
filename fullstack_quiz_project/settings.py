@@ -66,10 +66,6 @@ MIDDLEWARE = [
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT')
 
-SESSION_SAVE_EVERY_REQUEST = True
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
-SESSION_COOKIE_DOMAIN = 'cozyquiz.com'
-
 ROOT_URLCONF = 'fullstack_quiz_project.urls'
 
 TEMPLATES = [
