@@ -62,12 +62,11 @@ if (nextButton) {
 
 
 function getCookie(flavor) {
-    const cookieList = document.cookie.split(';');
-    const trimmedCookies = cookieList.map(cookie => cookie.trim);
-    const matchedCookie = trimmedCookies.find(c => c.startsWith(flavor + '='));
-    const cookieParts = matchedCookie.split('=')
+    const allCookies = document.cookie.split(';');
+    const trimmedCookies = allCookies.map(cookie => cookie.trim())
+    const matchingCookie = trimmedCookies.find(cookie => cookie.startsWith(flavor + '='));
 
-    return cookieParts[1];
+    return matchingCookie.split('=')[1];
 }
 
 const csrftoken = getCookie('csrftoken');
