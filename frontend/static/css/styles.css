@@ -431,9 +431,32 @@ body.django-prog .display-name-prompt {
 
 }
 
+/*laptops*/
+
+@media only screen and (max-width: 1200px) and (min-width: 775px) {
+
+    /*Django quiz*/
+    body.django-prog .quiz-title {
+        font-size: 20px;
+    }
+
+    body.django-prog .prompt-answer-container {
+        font-size: 50px;
+    }
+
+    /*VG quiz*/
+    body.vg-quotes .quiz-title {
+        font-size: 20px;
+    }
+
+    body.vg-quotes .prompt-answer-container {
+        font-size: 38px;
+    }
+}
+
 
 /* huge screens */
-@media only screen and (min-width: 4001px) {
+@media only screen and (min-width: 2001px) {
 
     body.vg-quotes {
         background-image: none;
