@@ -17,9 +17,19 @@ CozyQuiz was made in a [Linux](https://linux.org) environment using:
 ### Purpose
 
 After making small contributions to a large codebase at my first development job, I wanted to build something from the ground up to better understand how all the parts of a full-stack web application work together. 
-In particular, I gained a significantly deeper understanding of APIs, deployment, and working with database models. 
+In particular, I gained a deeper understanding of APIs, deployment, and working with database models. 
 
 
 ### Contact
 
 Found a bug? Want to point out something that could be improved? Send me a message!
+
+
+### Screenshots
+
+
+![screenshot1](https://i.imgur.com/rt986zS.png?1)      
+
+Each quiz has its own thematic styling  
+
+![screenshot2](https://i.imgur.com/3sWMzmM.png?1)
