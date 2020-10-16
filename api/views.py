@@ -1,5 +1,6 @@
 import json
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from fullstack_quiz.models import Prompt
 from fullstack_quiz.models import HighScore
@@ -21,6 +22,7 @@ def quiz_selection_handler_view(request, selected_quiz_id=None):
     return HttpResponse(json_prompts, content_type='application/json')
 
 
+@csrf_exempt
 def receive_user_score_view(request, user_correct_score=None, quiz_id=None):
     if request.method == 'POST':
 
