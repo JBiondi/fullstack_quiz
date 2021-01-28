@@ -87,7 +87,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'fullstack_quiz_project.wsgi.application'
 
-CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = [
     'https://cozyquiz.com',
