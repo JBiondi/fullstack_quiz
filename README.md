@@ -1,28 +1,17 @@
 # CozyQuiz
 
-https://cozyquiz.com is a website where people can enjoy thoughtfully constructed quizzes on esoteric topics not typically found on other quiz websites.
+https://cozyquiz.com is a website where people can enjoy quizzes with styling that matches the topic of the quiz
 
 ### Tech Stack
 
 CozyQuiz was made in a [Linux](https://linux.org) environment using:
 
 * [PostgreSQL](https://postgresql.org) - storing the quiz data and highscores
-* [Django](https://djangoproject.com) - database liason, serving REST APIs to the frontend
+* [Django](https://djangoproject.com) - database liaison, serving REST APIs
 * [Python](https://python.org) - backend logic
 * [vanilla JavaScript](https://javascript.com) - interactivity on the frontend, sending fetch requests to the backend
-* [PyCharm](https://www.jetbrains.com/pycharm/) - IDE/code editor
+* [PyCharm](https://www.jetbrains.com/pycharm/) - IDE
 * [Heroku](https://heroku.com) - deployment
-
-
-### Purpose
-
-After making small contributions to a large codebase at my first development job, I wanted to build something from the ground up to better understand how all the parts of a full-stack web application work together. 
-In particular, I gained a deeper understanding of APIs, deployment, and working with database models. 
-
-
-### Contact
-
-Found a bug? Want to point out something that could be improved? Send me a message!
 
 
 ### Screenshots
@@ -33,3 +22,8 @@ Found a bug? Want to point out something that could be improved? Send me a messa
 Each quiz has its own thematic styling  
 
 ![screenshot2](https://i.imgur.com/3sWMzmM.png?1)
+
+
+### Contact
+
+Found a bug? Have a suggestion? Hiring? Send me a message on Twitter @_jessicabiondi
