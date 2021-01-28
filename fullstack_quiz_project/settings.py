@@ -40,11 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'fullstack_quiz.apps.FullstackQuizConfig',
     'api.apps.ApiConfig',
     'frontend',
-
     'rest_framework',
     'corsheaders',
 ]
@@ -53,9 +51,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-
     'corsheaders.middleware.CorsMiddleware',
-
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -98,7 +94,6 @@ CSRF_TRUSTED_ORIGINS = ['cozyquiz.com',
                         'fullstack-quiz-website.herokuapp.com',
                         '.fullstack-quiz-website.herokuapp.com',
                         ]
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -149,7 +144,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATIC_URL = '/static/'
 
 django_heroku.settings(locals())
